@@ -8,6 +8,10 @@
 
 import Foundation
 
+enum SequencerConstants {
+    static let queueName = "sequencer.queue"
+}
+
 struct SequencerDisplayConfiguration {
     let position: Int
     let tempo: Double
@@ -33,6 +37,8 @@ class Sequencer {
     let audioEngine: SequencerAudioEngine
     let tempoCounter: TempoCounter
     
+    let queue: DispatchQueue
+    
     var tempo: Double {
         get {
             return tempoCounter.tempo
@@ -57,6 +63,11 @@ class Sequencer {
         hatSequence = Array(repeating: false, count: length)
         
         tempoCounter.beatStep = .eighth
+        
+        queue = DispatchQueue(label: SequencerConstants.queueName,
+                              qos: .userInteractive,
+                              attributes: .concurrent)
+        
         tempoCounter.handler = sound
     }
     
@@ -82,18 +93,23 @@ class Sequencer {
     }
 
     private func sound() {
-        if kickSequence[counter] {
-            audioEngine.play(.kick, withVelocity: 127)
+        queue.async {
+            if self.kickSequence[self.counter] {
+                self.audioEngine.play(.kick, withVelocity: 127)
+            }
+            if self.snareSequence[self.counter] {
+                self.audioEngine.play(.snare, withVelocity: 127)
+            }
+            if self.hatSequence[self.counter] {
+                self.audioEngine.play(.hat, withVelocity: 127)
+            }
+            let configuration = SequencerDisplayConfiguration(position: self.counter, tempo: self.tempo)
+            
+            DispatchQueue.main.async {
+                self.display.show(configuration)
+            }
+            
+            self.counter = (self.counter == self.length - 1) ? 0 : self.counter + 1
         }
-        if snareSequence[counter] {
-            audioEngine.play(.snare, withVelocity: 127)
-        }
-        if hatSequence[counter] {
-            audioEngine.play(.hat, withVelocity: 127)
-        }
-        let configuration = SequencerDisplayConfiguration(position: counter, tempo: tempo)
-        display.show(configuration)
-        
-        counter = (counter == length - 1) ? 0 : counter + 1
     }
 }
