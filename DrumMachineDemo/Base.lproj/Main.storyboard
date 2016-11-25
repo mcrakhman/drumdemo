@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11535.1" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="POW-xQ-Y9y">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11523"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main Screen View Controller-->
+        <scene sceneID="r6x-Vh-t0K">
+            <objects>
+                <viewController storyboardIdentifier="MainScreenViewController" id="POW-xQ-Y9y" customClass="MainScreenViewController" customModule="DrumMachineDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="r6B-HD-FSO"/>
+                        <viewControllerLayoutGuide type="bottom" id="flF-jv-wx0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7aV-Ys-ccC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3DK-9P-04C">
+                                <rect key="frame" x="163" y="60" width="49" height="30"/>
+                                <state key="normal" title="Record">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="recordSound:" destination="POW-xQ-Y9y" eventType="touchUpInside" id="2ch-xX-WTn"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="643-AT-jyP">
+                                <rect key="frame" x="0.0" y="233.5" width="375" height="160"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8rR-F6-HRt">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="nvr-Mf-jfj"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="tou-eh-Xsh"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OA5-ke-qxc">
+                                            <size key="itemSize" width="50" height="50"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ArrowDownCell" id="q1c-R7-bLc" customClass="ArrowDownCell" customModule="DrumMachineDemo" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y6m-HO-zHX">
+                                                            <rect key="frame" x="17" y="21" width="42" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </view>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="Y6m-HO-zHX" firstAttribute="centerX" secondItem="q1c-R7-bLc" secondAttribute="centerX" id="DsO-Vk-VmD"/>
+                                                    <constraint firstItem="Y6m-HO-zHX" firstAttribute="centerY" secondItem="q1c-R7-bLc" secondAttribute="centerY" id="Elu-wf-HdQ"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="drumLabel" destination="Y6m-HO-zHX" id="CWB-WV-xQk"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="tou-eh-Xsh"/>
+                                            </mask>
+                                        </variation>
+                                    </collectionView>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jry-Wz-7Iz">
+                                        <rect key="frame" x="0.0" y="40" width="375" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="ggQ-cr-3GN"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dsD-e2-Ru8">
+                                            <size key="itemSize" width="50" height="50"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DrumCell" id="FLC-e5-lyh" customClass="DrumCell" customModule="DrumMachineDemo" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9o-ZE-ZGd">
+                                                            <rect key="frame" x="17" y="21" width="42" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </view>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="a9o-ZE-ZGd" firstAttribute="centerY" secondItem="FLC-e5-lyh" secondAttribute="centerY" id="FiV-x2-dZb"/>
+                                                    <constraint firstItem="a9o-ZE-ZGd" firstAttribute="centerX" secondItem="FLC-e5-lyh" secondAttribute="centerX" id="Wnj-VI-yS1"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="drumLabel" destination="a9o-ZE-ZGd" id="JXX-kF-CAc"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fCp-f6-69I">
+                                        <rect key="frame" x="0.0" y="80" width="375" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="QJd-Jv-prU"/>
+                                            <constraint firstAttribute="height" constant="40" id="oag-GP-6MQ"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0tC-rR-qdc">
+                                            <size key="itemSize" width="50" height="50"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DrumCell" id="bFq-au-92c" customClass="DrumCell" customModule="DrumMachineDemo" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MDJ-my-KwV">
+                                                            <rect key="frame" x="17" y="21" width="42" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </view>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="MDJ-my-KwV" firstAttribute="centerY" secondItem="bFq-au-92c" secondAttribute="centerY" id="1NL-qK-BPt"/>
+                                                    <constraint firstItem="MDJ-my-KwV" firstAttribute="centerX" secondItem="bFq-au-92c" secondAttribute="centerX" id="JyC-Z3-Mky"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="drumLabel" destination="MDJ-my-KwV" id="Na2-MT-B1O"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="QJd-Jv-prU"/>
+                                            </mask>
+                                        </variation>
+                                    </collectionView>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OSu-vA-pdS">
+                                        <rect key="frame" x="0.0" y="120" width="375" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="1J5-Xb-wll"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="epi-nK-xMn"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="pDB-RN-0ws"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="p2A-GC-tkO">
+                                            <size key="itemSize" width="50" height="50"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DrumCell" id="dcc-6m-NDe" customClass="DrumCell" customModule="DrumMachineDemo" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BR4-wg-vRO">
+                                                            <rect key="frame" x="17" y="21" width="42" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </view>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="BR4-wg-vRO" firstAttribute="centerX" secondItem="dcc-6m-NDe" secondAttribute="centerX" id="bX4-Zc-eQH"/>
+                                                    <constraint firstItem="BR4-wg-vRO" firstAttribute="centerY" secondItem="dcc-6m-NDe" secondAttribute="centerY" id="oiL-Er-h2J"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="drumLabel" destination="BR4-wg-vRO" id="dl5-bE-Pmp"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="epi-nK-xMn"/>
+                                                <exclude reference="pDB-RN-0ws"/>
+                                            </mask>
+                                        </variation>
+                                    </collectionView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="fCp-f6-69I" firstAttribute="leading" secondItem="643-AT-jyP" secondAttribute="leading" id="4Tx-W7-0gs"/>
+                                    <constraint firstItem="OSu-vA-pdS" firstAttribute="leading" secondItem="643-AT-jyP" secondAttribute="leading" id="7ah-vI-3PS"/>
+                                    <constraint firstItem="jry-Wz-7Iz" firstAttribute="leading" secondItem="643-AT-jyP" secondAttribute="leading" id="Bo0-6L-1ds"/>
+                                    <constraint firstAttribute="trailing" secondItem="fCp-f6-69I" secondAttribute="trailing" id="Fjr-AX-pJJ"/>
+                                    <constraint firstItem="jry-Wz-7Iz" firstAttribute="leading" secondItem="643-AT-jyP" secondAttribute="leading" id="WFz-4P-80m"/>
+                                    <constraint firstAttribute="trailing" secondItem="8rR-F6-HRt" secondAttribute="trailing" id="Ysc-st-0bj"/>
+                                    <constraint firstItem="8rR-F6-HRt" firstAttribute="leading" secondItem="643-AT-jyP" secondAttribute="leading" id="fjr-pG-4nF"/>
+                                    <constraint firstAttribute="trailing" secondItem="jry-Wz-7Iz" secondAttribute="trailing" id="gdm-23-doN"/>
+                                    <constraint firstAttribute="trailing" secondItem="OSu-vA-pdS" secondAttribute="trailing" id="iPR-A8-mdb"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Bo0-6L-1ds"/>
+                                    </mask>
+                                </variation>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z92-iC-iGY">
+                                <rect key="frame" x="187.5" y="423.5" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="70z-hc-x1s">
+                                <rect key="frame" x="142.5" y="577" width="90" height="30"/>
+                                <state key="normal" title="Play Random">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="playRandomFile:" destination="POW-xQ-Y9y" eventType="touchUpInside" id="PiS-Jg-TxM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="643-AT-jyP" firstAttribute="leading" secondItem="7aV-Ys-ccC" secondAttribute="leading" id="4KX-WJ-CQB"/>
+                            <constraint firstItem="flF-jv-wx0" firstAttribute="top" secondItem="70z-hc-x1s" secondAttribute="bottom" constant="60" id="6Ao-Uj-9I5"/>
+                            <constraint firstItem="3DK-9P-04C" firstAttribute="top" secondItem="r6B-HD-FSO" secondAttribute="bottom" constant="40" id="7Jb-i9-lNS"/>
+                            <constraint firstItem="Z92-iC-iGY" firstAttribute="top" secondItem="643-AT-jyP" secondAttribute="bottom" constant="30" id="BDo-c9-WAl"/>
+                            <constraint firstItem="3DK-9P-04C" firstAttribute="centerX" secondItem="7aV-Ys-ccC" secondAttribute="centerX" id="Bgd-5H-xf2"/>
+                            <constraint firstItem="3DK-9P-04C" firstAttribute="centerY" secondItem="7aV-Ys-ccC" secondAttribute="centerY" id="GTp-RK-np2"/>
+                            <constraint firstItem="643-AT-jyP" firstAttribute="top" relation="greaterThanOrEqual" secondItem="3DK-9P-04C" secondAttribute="bottom" constant="4" id="GvC-c6-ywx"/>
+                            <constraint firstItem="Z92-iC-iGY" firstAttribute="centerX" secondItem="7aV-Ys-ccC" secondAttribute="centerX" id="JZT-6d-e5S"/>
+                            <constraint firstItem="Z92-iC-iGY" firstAttribute="top" secondItem="r6B-HD-FSO" secondAttribute="bottom" constant="20" id="Sbg-Nj-aQL"/>
+                            <constraint firstAttribute="bottom" secondItem="3DK-9P-04C" secondAttribute="bottom" constant="40" id="WUR-0A-nrw"/>
+                            <constraint firstItem="fCp-f6-69I" firstAttribute="centerY" secondItem="7aV-Ys-ccC" secondAttribute="centerY" id="cUK-TS-2EE"/>
+                            <constraint firstAttribute="bottom" secondItem="Z92-iC-iGY" secondAttribute="bottom" constant="40" id="eTP-KR-zbO"/>
+                            <constraint firstAttribute="trailing" secondItem="643-AT-jyP" secondAttribute="trailing" id="mav-a1-zeA"/>
+                            <constraint firstItem="643-AT-jyP" firstAttribute="centerY" secondItem="7aV-Ys-ccC" secondAttribute="centerY" id="nHe-Br-tvT"/>
+                            <constraint firstItem="70z-hc-x1s" firstAttribute="centerX" secondItem="7aV-Ys-ccC" secondAttribute="centerX" id="oVo-Ok-dav"/>
+                            <constraint firstItem="643-AT-jyP" firstAttribute="centerX" secondItem="7aV-Ys-ccC" secondAttribute="centerX" id="r9P-ty-VuD"/>
+                            <constraint firstItem="70z-hc-x1s" firstAttribute="top" secondItem="r6B-HD-FSO" secondAttribute="bottom" constant="8" id="sIK-xc-l9i"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="GTp-RK-np2"/>
+                                <exclude reference="WUR-0A-nrw"/>
+                                <exclude reference="nHe-Br-tvT"/>
+                                <exclude reference="r9P-ty-VuD"/>
+                                <exclude reference="sIK-xc-l9i"/>
+                                <exclude reference="Sbg-Nj-aQL"/>
+                                <exclude reference="eTP-KR-zbO"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="arrowDownCollectionView" destination="8rR-F6-HRt" id="QAh-DC-WD6"/>
+                        <outlet property="collectionStackView" destination="643-AT-jyP" id="F4V-O9-rvl"/>
+                        <outlet property="hatCollectionView" destination="OSu-vA-pdS" id="aFc-Mw-Tdb"/>
+                        <outlet property="kickCollectionView" destination="jry-Wz-7Iz" id="DEc-a6-5va"/>
+                        <outlet property="snareCollectionView" destination="fCp-f6-69I" id="I9y-hK-bC1"/>
+                        <outlet property="tempoLabel" destination="Z92-iC-iGY" id="lMW-GL-Uqu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2cg-Ch-Gd6" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
