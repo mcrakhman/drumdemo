@@ -132,7 +132,6 @@ class MainScreenViewController: UIViewController, UICollectionViewDataSource, UI
         viewModel.didTap(instrumentType, at: indexPath.row)
     }
 
-    
     // MARK: SequencerDisplay
     
     func show(_ configuration: SequencerDisplayConfiguration) {

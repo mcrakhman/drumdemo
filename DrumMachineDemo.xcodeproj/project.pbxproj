@@ -11,11 +11,13 @@
 		9E4457BD1DE86E4F005992D0 /* ArrowDownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4457BB1DE86E4F005992D0 /* ArrowDownCell.swift */; };
 		9E4457BE1DE86E4F005992D0 /* DrumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4457BC1DE86E4F005992D0 /* DrumCell.swift */; };
 		9E4457C11DE86E8B005992D0 /* MainScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4457C01DE86E8B005992D0 /* MainScreenViewModel.swift */; };
+		9E90D3531DE8D014009BB198 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E90D3521DE8D014009BB198 /* Promise.swift */; };
+		9E90D3561DE8D170009BB198 /* RecordingsScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E90D3551DE8D170009BB198 /* RecordingsScreenViewModel.swift */; };
 		9EAEDF041DE8365E00560223 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAEDF031DE8365E00560223 /* AppDelegate.swift */; };
 		9EAEDF091DE8365E00560223 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EAEDF071DE8365E00560223 /* Main.storyboard */; };
 		9EAEDF0B1DE8365E00560223 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EAEDF0A1DE8365E00560223 /* Assets.xcassets */; };
 		9EAEDF0E1DE8365E00560223 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EAEDF0C1DE8365E00560223 /* LaunchScreen.storyboard */; };
-		9EAEDF171DE8370100560223 /* CADisplayLinkTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAEDF161DE8370100560223 /* CADisplayLinkTimer.swift */; };
+		9EAEDF171DE8370100560223 /* TempoCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAEDF161DE8370100560223 /* TempoCounter.swift */; };
 		9EAEDF221DE83E6500560223 /* Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAEDF211DE83E6500560223 /* Sequence.swift */; };
 		9EAEDF251DE83F4C00560223 /* UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAEDF241DE83F4C00560223 /* UICollectionViewCell.swift */; };
 		9EAEDF271DE85C8D00560223 /* MotionEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAEDF261DE85C8D00560223 /* MotionEngine.swift */; };
@@ -33,6 +35,8 @@
 		9EC856C81DE87CC9003C5DC9 /* snare-punch.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9EC856C11DE87CC9003C5DC9 /* snare-punch.wav */; };
 		9EC856C91DE87CC9003C5DC9 /* snare-sumo.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9EC856C21DE87CC9003C5DC9 /* snare-sumo.wav */; };
 		9EC856CB1DE8A44B003C5DC9 /* SequenceStepCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC856CA1DE8A44B003C5DC9 /* SequenceStepCounter.swift */; };
+		9EC856D11DE8CB7A003C5DC9 /* RecordingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC856D01DE8CB7A003C5DC9 /* RecordingsViewController.swift */; };
+		9EC856D41DE8CB9E003C5DC9 /* RecordingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC856D31DE8CB9E003C5DC9 /* RecordingsCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -54,13 +58,15 @@
 		9E4457BB1DE86E4F005992D0 /* ArrowDownCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArrowDownCell.swift; path = UserStories/MainScreen/View/Cells/ArrowDownCell.swift; sourceTree = "<group>"; };
 		9E4457BC1DE86E4F005992D0 /* DrumCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DrumCell.swift; path = UserStories/MainScreen/View/Cells/DrumCell.swift; sourceTree = "<group>"; };
 		9E4457C01DE86E8B005992D0 /* MainScreenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainScreenViewModel.swift; path = UserStories/MainScreen/ViewModel/MainScreenViewModel.swift; sourceTree = "<group>"; };
+		9E90D3521DE8D014009BB198 /* Promise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Promise.swift; path = Helpers/Promise.swift; sourceTree = "<group>"; };
+		9E90D3551DE8D170009BB198 /* RecordingsScreenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecordingsScreenViewModel.swift; path = UserStories/RecordingsScreen/ViewModel/RecordingsScreenViewModel.swift; sourceTree = "<group>"; };
 		9EAEDF001DE8365E00560223 /* DrumMachineDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrumMachineDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EAEDF031DE8365E00560223 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9EAEDF081DE8365E00560223 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9EAEDF0A1DE8365E00560223 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9EAEDF0D1DE8365E00560223 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9EAEDF0F1DE8365E00560223 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9EAEDF161DE8370100560223 /* CADisplayLinkTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CADisplayLinkTimer.swift; path = Helpers/CADisplayLinkTimer.swift; sourceTree = "<group>"; };
+		9EAEDF161DE8370100560223 /* TempoCounter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TempoCounter.swift; path = Helpers/TempoCounter.swift; sourceTree = "<group>"; };
 		9EAEDF211DE83E6500560223 /* Sequence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Sequence.swift; path = Helpers/Sequence.swift; sourceTree = "<group>"; };
 		9EAEDF241DE83F4C00560223 /* UICollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UICollectionViewCell.swift; path = Extensions/UICollectionViewCell.swift; sourceTree = "<group>"; };
 		9EAEDF261DE85C8D00560223 /* MotionEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MotionEngine.swift; path = Helpers/MotionEngine.swift; sourceTree = "<group>"; };
@@ -78,6 +84,8 @@
 		9EC856C11DE87CC9003C5DC9 /* snare-punch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "snare-punch.wav"; path = "Resources/AudioFiles/snare-punch.wav"; sourceTree = "<group>"; };
 		9EC856C21DE87CC9003C5DC9 /* snare-sumo.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "snare-sumo.wav"; path = "Resources/AudioFiles/snare-sumo.wav"; sourceTree = "<group>"; };
 		9EC856CA1DE8A44B003C5DC9 /* SequenceStepCounter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SequenceStepCounter.swift; path = Helpers/SequenceStepCounter.swift; sourceTree = "<group>"; };
+		9EC856D01DE8CB7A003C5DC9 /* RecordingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecordingsViewController.swift; path = UserStories/RecordingsScreen/View/RecordingsViewController.swift; sourceTree = "<group>"; };
+		9EC856D31DE8CB9E003C5DC9 /* RecordingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecordingsCell.swift; path = UserStories/RecordingsScreen/View/Cells/RecordingsCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +103,7 @@
 		9E4457B51DE86E00005992D0 /* UserStories */ = {
 			isa = PBXGroup;
 			children = (
+				9EC856CC1DE8C787003C5DC9 /* RecordingsScreen */,
 				9E4457B61DE86E23005992D0 /* MainScreen */,
 			);
 			name = UserStories;
@@ -131,6 +140,14 @@
 			isa = PBXGroup;
 			children = (
 				9E4457C01DE86E8B005992D0 /* MainScreenViewModel.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		9E90D3541DE8D133009BB198 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9E90D3551DE8D170009BB198 /* RecordingsScreenViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -173,10 +190,11 @@
 		9EAEDF151DE836C200560223 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				9E90D3521DE8D014009BB198 /* Promise.swift */,
 				9EAEDF261DE85C8D00560223 /* MotionEngine.swift */,
 				9EAEDF211DE83E6500560223 /* Sequence.swift */,
 				9EC856CA1DE8A44B003C5DC9 /* SequenceStepCounter.swift */,
-				9EAEDF161DE8370100560223 /* CADisplayLinkTimer.swift */,
+				9EAEDF161DE8370100560223 /* TempoCounter.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -228,6 +246,32 @@
 				9EC856C21DE87CC9003C5DC9 /* snare-sumo.wav */,
 			);
 			name = AudioFiles;
+			sourceTree = "<group>";
+		};
+		9EC856CC1DE8C787003C5DC9 /* RecordingsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				9E90D3541DE8D133009BB198 /* ViewModel */,
+				9EC856CF1DE8CB4B003C5DC9 /* View */,
+			);
+			name = RecordingsScreen;
+			sourceTree = "<group>";
+		};
+		9EC856CF1DE8CB4B003C5DC9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9EC856D21DE8CB7F003C5DC9 /* Cells */,
+				9EC856D01DE8CB7A003C5DC9 /* RecordingsViewController.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		9EC856D21DE8CB7F003C5DC9 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9EC856D31DE8CB9E003C5DC9 /* RecordingsCell.swift */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,7 +357,8 @@
 			files = (
 				9E4457BA1DE86E46005992D0 /* MainScreenViewController.swift in Sources */,
 				9EAEDF301DE863C100560223 /* AudioEngine.swift in Sources */,
-				9EAEDF171DE8370100560223 /* CADisplayLinkTimer.swift in Sources */,
+				9E90D3561DE8D170009BB198 /* RecordingsScreenViewModel.swift in Sources */,
+				9EAEDF171DE8370100560223 /* TempoCounter.swift in Sources */,
 				9EAEDF271DE85C8D00560223 /* MotionEngine.swift in Sources */,
 				9EAEDF251DE83F4C00560223 /* UICollectionViewCell.swift in Sources */,
 				9EC856CB1DE8A44B003C5DC9 /* SequenceStepCounter.swift in Sources */,
@@ -325,6 +370,9 @@
 				9EAEDF2C1DE8614100560223 /* Instruments.swift in Sources */,
 				9E4457BD1DE86E4F005992D0 /* ArrowDownCell.swift in Sources */,
 				9EAEDF2A1DE85D4200560223 /* Sequencer.swift in Sources */,
+				9EC856D11DE8CB7A003C5DC9 /* RecordingsViewController.swift in Sources */,
+				9EC856D41DE8CB9E003C5DC9 /* RecordingsCell.swift in Sources */,
+				9E90D3531DE8D014009BB198 /* Promise.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
