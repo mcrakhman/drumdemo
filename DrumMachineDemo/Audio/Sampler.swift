@@ -37,6 +37,10 @@ class Sampler {
         sequencer.stop()
     }
     
+    func changeMode() {
+        sequencer.mode = sequencer.mode == .playingTempo ? .recordingTempo : .playingTempo
+    }
+    
     func changeBeat(for instrument: Instruments, position: Int) {
         sequencer.changeBeatAtCurrentBar(for: instrument, position: position)
     }

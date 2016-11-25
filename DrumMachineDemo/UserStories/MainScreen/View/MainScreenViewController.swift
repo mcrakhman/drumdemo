@@ -33,6 +33,9 @@ class MainScreenViewController: UIViewController, UICollectionViewDataSource, UI
         viewModel.viewIsReady()
     }
     
+    @IBAction func changeMode(_ sender: Any) {
+        viewModel.shouldChangeMode()
+    }
     // MARK: Конфигурация
     
     private func configureCollectionViews() {

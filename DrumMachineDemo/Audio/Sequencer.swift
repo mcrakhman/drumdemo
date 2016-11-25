@@ -90,11 +90,26 @@ class Sequencer {
     }
     
     func changeBeatAtCurrentBar(for instrument: Instruments, position: Int) {
-        changeBeat(for: instrument, at: counter.bar, position: position)
+        queue.async {
+            self.changeBeat(for: instrument, at: self.counter.bar, position: position)
+        }
     }
     
-    func changeBeat(for instrument: Instruments, at bar: Int, position: Int) {
+    func play() {
+        queue.async {
+            self.tempoCounter.start()
+        }
+    }
+    
+    func stop() {
+        queue.async {
+            self.tempoCounter.stop()
+        }
+    }
+
+    private func changeBeat(for instrument: Instruments, at bar: Int, position: Int) {
         switch instrument {
+            
         case .kick:
             kickSequence[bar, position].enabled = !kickSequence[bar, position].enabled
         case .snare:
@@ -104,19 +119,10 @@ class Sequencer {
         }
     }
     
-    func play() {
-        tempoCounter.start()
-    }
-    
-    func stop() {
-        tempoCounter.stop()
-    }
-
     private func sound() {
         queue.async {
             let position = self.counter.position
             let bar = self.counter.bar
-            let nextBar = self.counter.nextBar
             let endOfBar = self.counter.atEndOfBar
             
             self.playSounds(atBar: bar, position: position)
@@ -128,13 +134,13 @@ class Sequencer {
             }
             
             let configuration = SequencerDisplayConfiguration(bar: bar, position: position, tempo: self.tempo)
-            
+
             DispatchQueue.main.async {
                 self.display.show(configuration)
                 if endOfBar {
-                    self.display.shouldUpdate(kickSequence: self.kickSequence[nextBar],
-                                              snareSequence: self.snareSequence[nextBar],
-                                              hatSequence: self.hatSequence[nextBar])
+                    self.display.shouldUpdate(kickSequence: self.kickSequence[bar],
+                                              snareSequence: self.snareSequence[bar],
+                                              hatSequence: self.hatSequence[bar])
                 }
             }
             

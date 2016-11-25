@@ -230,12 +230,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="70z-hc-x1s">
-                                <rect key="frame" x="142.5" y="577" width="90" height="30"/>
-                                <state key="normal" title="Play Random">
+                                <rect key="frame" x="139.5" y="577" width="96" height="30"/>
+                                <state key="normal" title="Change mode">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="playRandomFile:" destination="POW-xQ-Y9y" eventType="touchUpInside" id="PiS-Jg-TxM"/>
+                                    <action selector="changeMode:" destination="POW-xQ-Y9y" eventType="touchUpInside" id="v41-FC-H4P"/>
                                 </connections>
                             </button>
                         </subviews>

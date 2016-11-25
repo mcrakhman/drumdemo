@@ -25,4 +25,8 @@ class MainScreenViewModel {
     func didTap(_ instrument: Instruments, at index: Int) {
         sampler.changeBeat(for: instrument, position: index)
     }
+    
+    func shouldChangeMode() {
+        sampler.changeMode()
+    }
 }
