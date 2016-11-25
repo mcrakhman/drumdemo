@@ -117,7 +117,7 @@ class MainScreenViewController: UIViewController, UICollectionViewDataSource, UI
         return cell
     }
     
-    // MARKL UICollectionViewDelegate
+    // MARK: UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
@@ -130,7 +130,7 @@ class MainScreenViewController: UIViewController, UICollectionViewDataSource, UI
     }
 
     
-    // MARK: SequenceDisplay
+    // MARK: SequencerDisplay
     
     func show(_ configuration: SequencerDisplayConfiguration) {
         setArrowGrid(configuration.position)

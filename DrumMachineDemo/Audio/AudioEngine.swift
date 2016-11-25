@@ -7,9 +7,50 @@
 //
 
 import Foundation
+import AudioKit
+
+enum AudioEngineConstants {
+    static let kickName = "kick-dry"
+    static let snareName = "snare-brute"
+    static let hatName = "hihat-plain"
+}
 
 class AudioEngine: SequencerAudioEngine {
+    
+    let kick: AKSampler
+    let hat: AKSampler
+    let snare: AKSampler
+    let reverb: AKReverb
+    
+    let constants = AudioEngineConstants.self
+    
+    init() {
+        kick = AKSampler()
+        snare = AKSampler()
+        hat = AKSampler()
+        
+        kick.loadWav(constants.kickName)
+        snare.loadWav(constants.snareName)
+        hat.loadWav(constants.hatName)
+        
+        let mix = AKMixer(kick, snare, hat)
+        reverb = AKReverb(mix)
+        reverb.loadFactoryPreset(.mediumRoom)
+        
+        AudioKit.output = reverb
+        AudioKit.start()
+    }
+    
     func play(_ instrument: Instruments, withVelocity velocity: Int) {
-        print(instrument)
+        let sampler: AKSampler
+        switch instrument {
+        case .kick:
+            sampler = kick
+        case .snare:
+            sampler = snare
+        case .hat:
+            sampler = hat
+        }
+        sampler.play(velocity: velocity)
     }
 }

@@ -61,7 +61,7 @@ class Sequencer {
     }
     
     func changeBeat(for instrument: Instruments, at position: Int) {
-        guard position < length - 1 else { return }
+        guard position < length else { return }
         
         switch instrument {
         case .kick:

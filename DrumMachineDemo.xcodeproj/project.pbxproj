@@ -23,7 +23,30 @@
 		9EAEDF2C1DE8614100560223 /* Instruments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAEDF2B1DE8614100560223 /* Instruments.swift */; };
 		9EAEDF2E1DE8639800560223 /* Sampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAEDF2D1DE8639800560223 /* Sampler.swift */; };
 		9EAEDF301DE863C100560223 /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAEDF2F1DE863C100560223 /* AudioEngine.swift */; };
+		9EC856B51DE87A95003C5DC9 /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EC856B41DE87A95003C5DC9 /* AudioKit.framework */; };
+		9EC856B81DE87AD7003C5DC9 /* AudioKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9EC856B61DE87AD7003C5DC9 /* AudioKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9EC856C31DE87CC9003C5DC9 /* hihat-plain.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9EC856BC1DE87CC9003C5DC9 /* hihat-plain.wav */; };
+		9EC856C41DE87CC9003C5DC9 /* kick-classic.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9EC856BD1DE87CC9003C5DC9 /* kick-classic.wav */; };
+		9EC856C51DE87CC9003C5DC9 /* kick-dry.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9EC856BE1DE87CC9003C5DC9 /* kick-dry.wav */; };
+		9EC856C61DE87CC9003C5DC9 /* kick-tape.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9EC856BF1DE87CC9003C5DC9 /* kick-tape.wav */; };
+		9EC856C71DE87CC9003C5DC9 /* snare-brute.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9EC856C01DE87CC9003C5DC9 /* snare-brute.wav */; };
+		9EC856C81DE87CC9003C5DC9 /* snare-punch.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9EC856C11DE87CC9003C5DC9 /* snare-punch.wav */; };
+		9EC856C91DE87CC9003C5DC9 /* snare-sumo.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9EC856C21DE87CC9003C5DC9 /* snare-sumo.wav */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9EC856B91DE87AD8003C5DC9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9EC856B81DE87AD7003C5DC9 /* AudioKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		9E4457B91DE86E46005992D0 /* MainScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainScreenViewController.swift; path = UserStories/MainScreen/View/MainScreenViewController.swift; sourceTree = "<group>"; };
@@ -44,6 +67,15 @@
 		9EAEDF2B1DE8614100560223 /* Instruments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Instruments.swift; path = Audio/Instruments.swift; sourceTree = "<group>"; };
 		9EAEDF2D1DE8639800560223 /* Sampler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Sampler.swift; path = Audio/Sampler.swift; sourceTree = "<group>"; };
 		9EAEDF2F1DE863C100560223 /* AudioEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AudioEngine.swift; path = Audio/AudioEngine.swift; sourceTree = "<group>"; };
+		9EC856B41DE87A95003C5DC9 /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKit.framework; path = Carthage/Build/iOS/AudioKit.framework; sourceTree = "<group>"; };
+		9EC856B61DE87AD7003C5DC9 /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKit.framework; path = Carthage/Build/iOS/AudioKit.framework; sourceTree = "<group>"; };
+		9EC856BC1DE87CC9003C5DC9 /* hihat-plain.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "hihat-plain.wav"; path = "Resources/AudioFiles/hihat-plain.wav"; sourceTree = "<group>"; };
+		9EC856BD1DE87CC9003C5DC9 /* kick-classic.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "kick-classic.wav"; path = "Resources/AudioFiles/kick-classic.wav"; sourceTree = "<group>"; };
+		9EC856BE1DE87CC9003C5DC9 /* kick-dry.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "kick-dry.wav"; path = "Resources/AudioFiles/kick-dry.wav"; sourceTree = "<group>"; };
+		9EC856BF1DE87CC9003C5DC9 /* kick-tape.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "kick-tape.wav"; path = "Resources/AudioFiles/kick-tape.wav"; sourceTree = "<group>"; };
+		9EC856C01DE87CC9003C5DC9 /* snare-brute.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "snare-brute.wav"; path = "Resources/AudioFiles/snare-brute.wav"; sourceTree = "<group>"; };
+		9EC856C11DE87CC9003C5DC9 /* snare-punch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "snare-punch.wav"; path = "Resources/AudioFiles/snare-punch.wav"; sourceTree = "<group>"; };
+		9EC856C21DE87CC9003C5DC9 /* snare-sumo.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "snare-sumo.wav"; path = "Resources/AudioFiles/snare-sumo.wav"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EC856B51DE87A95003C5DC9 /* AudioKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,8 +136,10 @@
 		9EAEDEF71DE8365E00560223 = {
 			isa = PBXGroup;
 			children = (
+				9EC856B61DE87AD7003C5DC9 /* AudioKit.framework */,
 				9EAEDF021DE8365E00560223 /* DrumMachineDemo */,
 				9EAEDF011DE8365E00560223 /* Products */,
+				9EC856B31DE87A94003C5DC9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,6 +154,7 @@
 		9EAEDF021DE8365E00560223 /* DrumMachineDemo */ = {
 			isa = PBXGroup;
 			children = (
+				9EC856BA1DE87C7F003C5DC9 /* Resources */,
 				9E4457B51DE86E00005992D0 /* UserStories */,
 				9EAEDF281DE85D2D00560223 /* Audio */,
 				9EAEDF231DE83F3400560223 /* Extensions */,
@@ -161,6 +197,36 @@
 			name = Audio;
 			sourceTree = "<group>";
 		};
+		9EC856B31DE87A94003C5DC9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9EC856B41DE87A95003C5DC9 /* AudioKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9EC856BA1DE87C7F003C5DC9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9EC856BB1DE87C87003C5DC9 /* AudioFiles */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		9EC856BB1DE87C87003C5DC9 /* AudioFiles */ = {
+			isa = PBXGroup;
+			children = (
+				9EC856BC1DE87CC9003C5DC9 /* hihat-plain.wav */,
+				9EC856BD1DE87CC9003C5DC9 /* kick-classic.wav */,
+				9EC856BE1DE87CC9003C5DC9 /* kick-dry.wav */,
+				9EC856BF1DE87CC9003C5DC9 /* kick-tape.wav */,
+				9EC856C01DE87CC9003C5DC9 /* snare-brute.wav */,
+				9EC856C11DE87CC9003C5DC9 /* snare-punch.wav */,
+				9EC856C21DE87CC9003C5DC9 /* snare-sumo.wav */,
+			);
+			name = AudioFiles;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -171,6 +237,7 @@
 				9EAEDEFC1DE8365E00560223 /* Sources */,
 				9EAEDEFD1DE8365E00560223 /* Frameworks */,
 				9EAEDEFE1DE8365E00560223 /* Resources */,
+				9EC856B91DE87AD8003C5DC9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -221,8 +288,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EC856C41DE87CC9003C5DC9 /* kick-classic.wav in Resources */,
 				9EAEDF0E1DE8365E00560223 /* LaunchScreen.storyboard in Resources */,
+				9EC856C61DE87CC9003C5DC9 /* kick-tape.wav in Resources */,
+				9EC856C81DE87CC9003C5DC9 /* snare-punch.wav in Resources */,
+				9EC856C91DE87CC9003C5DC9 /* snare-sumo.wav in Resources */,
+				9EC856C71DE87CC9003C5DC9 /* snare-brute.wav in Resources */,
 				9EAEDF0B1DE8365E00560223 /* Assets.xcassets in Resources */,
+				9EC856C31DE87CC9003C5DC9 /* hihat-plain.wav in Resources */,
+				9EC856C51DE87CC9003C5DC9 /* kick-dry.wav in Resources */,
 				9EAEDF091DE8365E00560223 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -370,6 +444,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = Z5M5E3T534;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = DrumMachineDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MR.DrumMachineDemo;
@@ -383,6 +461,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = Z5M5E3T534;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = DrumMachineDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MR.DrumMachineDemo;
