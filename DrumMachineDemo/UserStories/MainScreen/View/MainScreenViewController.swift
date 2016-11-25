@@ -81,9 +81,9 @@ class MainScreenViewController: UIViewController, UICollectionViewDataSource, UI
         }
     }
     
-    private func setDrumGrid(_ sequence: BeatSequence, forCollection collection: UICollectionView) {
+    private func setDrumGrid(_ sequence: [SequenceNode], forCollection collection: UICollectionView) {
         for indexPath in collection.indexPathsForVisibleItems {
-            changeActiveCell(for: collection, atIndexPath: indexPath, active: sequence[indexPath.row])
+            changeActiveCell(for: collection, atIndexPath: indexPath, active: sequence[indexPath.row].enabled)
         }
     }
     
@@ -135,6 +135,14 @@ class MainScreenViewController: UIViewController, UICollectionViewDataSource, UI
     func show(_ configuration: SequencerDisplayConfiguration) {
         setArrowGrid(configuration.position)
         tempoLabel.text = String(configuration.tempo)
+    }
+    
+    func shouldUpdate(kickSequence: [SequenceNode],
+                      snareSequence: [SequenceNode],
+                      hatSequence: [SequenceNode]) {
+        setDrumGrid(kickSequence, forCollection: kickCollectionView)
+        setDrumGrid(snareSequence, forCollection: snareCollectionView)
+        setDrumGrid(hatSequence, forCollection: hatCollectionView)
     }
 }
 

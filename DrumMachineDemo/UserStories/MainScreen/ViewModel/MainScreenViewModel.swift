@@ -23,6 +23,6 @@ class MainScreenViewModel {
     }
     
     func didTap(_ instrument: Instruments, at index: Int) {
-        sampler.changeBeat(for: instrument, at: index)
+        sampler.changeBeat(for: instrument, position: index)
     }
 }

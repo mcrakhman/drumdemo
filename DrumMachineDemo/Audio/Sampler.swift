@@ -23,7 +23,7 @@ class Sampler {
     init(display: SequencerDisplay) {
         motionEngine = MotionEngine()
         audioEngine = AudioEngine()
-        sequencer = Sequencer(display: display, audioEngine: audioEngine, length: 16)
+        sequencer = Sequencer(display: display, audioEngine: audioEngine, length: 2, step: .sixteenth)
     }
     
     func play() {
@@ -37,8 +37,8 @@ class Sampler {
         sequencer.stop()
     }
     
-    func changeBeat(for instrument: Instruments, at position: Int) {
-        sequencer.changeBeat(for: instrument, at: position)
+    func changeBeat(for instrument: Instruments, position: Int) {
+        sequencer.changeBeatAtCurrentBar(for: instrument, position: position)
     }
     
     func load(_ beatSequence: BeatSequence, for instrument: Instruments) {

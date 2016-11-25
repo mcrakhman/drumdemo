@@ -12,7 +12,13 @@ enum SequencerConstants {
     static let queueName = "sequencer.queue"
 }
 
+enum SequencerMode {
+    case recordingTempo
+    case playingTempo
+}
+
 struct SequencerDisplayConfiguration {
+    let bar: Int
     let position: Int
     let tempo: Double
 }
@@ -23,15 +29,17 @@ protocol SequencerAudioEngine {
 
 protocol SequencerDisplay {
     func show(_ configuration: SequencerDisplayConfiguration)
+    func shouldUpdate(kickSequence: [SequenceNode],
+                      snareSequence: [SequenceNode],
+                      hatSequence: [SequenceNode])
 }
 
 class Sequencer {
-    var kickSequence: BeatSequence
-    var snareSequence: BeatSequence
-    var hatSequence: BeatSequence
+    var kickSequence: AdvancedBeatSequence
+    var snareSequence: AdvancedBeatSequence
+    var hatSequence: AdvancedBeatSequence
     
-    var counter: Int
-    var length: Int
+    var counter: SequenceStepCounter
     
     let display: SequencerDisplay
     let audioEngine: SequencerAudioEngine
@@ -39,11 +47,17 @@ class Sequencer {
     
     let queue: DispatchQueue
     
+    var mode: SequencerMode = .recordingTempo
+    
     var tempo: Double {
         get {
             return tempoCounter.tempo
         }
         set {
+            if mode == .playingTempo {
+                return
+            }
+            
             tempoCounter.tempo = newValue
         }
     }
@@ -52,17 +66,21 @@ class Sequencer {
         return tempoCounter.isRunning
     }
     
-    init(display: SequencerDisplay, audioEngine: SequencerAudioEngine, length: Int) {
+    init(display: SequencerDisplay,
+         audioEngine: SequencerAudioEngine,
+         length: Int,
+         step: BeatStep) {
         self.display = display
         self.audioEngine = audioEngine
         self.tempoCounter = TempoCounter()
-        self.length = length
-        counter = 0
-        kickSequence = Array(repeating: false, count: length)
-        snareSequence = Array(repeating: false, count: length)
-        hatSequence = Array(repeating: false, count: length)
         
-        tempoCounter.beatStep = .eighth
+        counter = SequenceStepCounter(length: length, step: step)
+        
+        kickSequence = AdvancedBeatSequence(length: length, step: step, instrument: .kick)
+        snareSequence = AdvancedBeatSequence(length: length, step: step, instrument: .snare)
+        hatSequence = AdvancedBeatSequence(length: length, step: step, instrument: .hat)
+        
+        tempoCounter.beatStep = step
         
         queue = DispatchQueue(label: SequencerConstants.queueName,
                               qos: .userInteractive,
@@ -71,16 +89,18 @@ class Sequencer {
         tempoCounter.handler = sound
     }
     
-    func changeBeat(for instrument: Instruments, at position: Int) {
-        guard position < length else { return }
-        
+    func changeBeatAtCurrentBar(for instrument: Instruments, position: Int) {
+        changeBeat(for: instrument, at: counter.bar, position: position)
+    }
+    
+    func changeBeat(for instrument: Instruments, at bar: Int, position: Int) {
         switch instrument {
         case .kick:
-            kickSequence[position] = !kickSequence[position]
+            kickSequence[bar, position].enabled = !kickSequence[bar, position].enabled
         case .snare:
-            snareSequence[position] = !snareSequence[position]
+            snareSequence[bar, position].enabled = !snareSequence[bar, position].enabled
         case .hat:
-            hatSequence[position] = !hatSequence[position]
+            hatSequence[bar, position].enabled = !hatSequence[bar, position].enabled
         }
     }
     
@@ -94,22 +114,49 @@ class Sequencer {
 
     private func sound() {
         queue.async {
-            if self.kickSequence[self.counter] {
-                self.audioEngine.play(.kick, withVelocity: 127)
+            let position = self.counter.position
+            let bar = self.counter.bar
+            let nextBar = self.counter.nextBar
+            let endOfBar = self.counter.atEndOfBar
+            
+            self.playSounds(atBar: bar, position: position)
+            
+            if self.mode == .recordingTempo {
+                self.updateTempo(atBar: bar, position: position)
+            } else {
+                self.tempoCounter.tempo = self.kickSequence[bar, position].tempo
             }
-            if self.snareSequence[self.counter] {
-                self.audioEngine.play(.snare, withVelocity: 127)
-            }
-            if self.hatSequence[self.counter] {
-                self.audioEngine.play(.hat, withVelocity: 127)
-            }
-            let configuration = SequencerDisplayConfiguration(position: self.counter, tempo: self.tempo)
+            
+            let configuration = SequencerDisplayConfiguration(bar: bar, position: position, tempo: self.tempo)
             
             DispatchQueue.main.async {
                 self.display.show(configuration)
+                if endOfBar {
+                    self.display.shouldUpdate(kickSequence: self.kickSequence[nextBar],
+                                              snareSequence: self.snareSequence[nextBar],
+                                              hatSequence: self.hatSequence[nextBar])
+                }
             }
             
-            self.counter = (self.counter == self.length - 1) ? 0 : self.counter + 1
+            self.counter.increment()
         }
+    }
+    
+    private func playSounds(atBar bar: Int, position: Int) {
+        if kickSequence[bar, position].enabled {
+            audioEngine.play(.kick, withVelocity: kickSequence[bar, position].velocity)
+        }
+        if snareSequence[bar, position].enabled {
+            audioEngine.play(.snare, withVelocity: snareSequence[bar, position].velocity)
+        }
+        if hatSequence[bar, position].enabled {
+            audioEngine.play(.hat, withVelocity: hatSequence[bar, position].velocity)
+        }
+    }
+    
+    private func updateTempo(atBar bar: Int, position: Int) {
+        kickSequence[bar, position].tempo = tempo
+        snareSequence[bar, position].tempo = tempo
+        hatSequence[bar, position].tempo = tempo
     }
 }

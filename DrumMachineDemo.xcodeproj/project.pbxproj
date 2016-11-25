@@ -32,6 +32,7 @@
 		9EC856C71DE87CC9003C5DC9 /* snare-brute.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9EC856C01DE87CC9003C5DC9 /* snare-brute.wav */; };
 		9EC856C81DE87CC9003C5DC9 /* snare-punch.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9EC856C11DE87CC9003C5DC9 /* snare-punch.wav */; };
 		9EC856C91DE87CC9003C5DC9 /* snare-sumo.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9EC856C21DE87CC9003C5DC9 /* snare-sumo.wav */; };
+		9EC856CB1DE8A44B003C5DC9 /* SequenceStepCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC856CA1DE8A44B003C5DC9 /* SequenceStepCounter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -76,6 +77,7 @@
 		9EC856C01DE87CC9003C5DC9 /* snare-brute.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "snare-brute.wav"; path = "Resources/AudioFiles/snare-brute.wav"; sourceTree = "<group>"; };
 		9EC856C11DE87CC9003C5DC9 /* snare-punch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "snare-punch.wav"; path = "Resources/AudioFiles/snare-punch.wav"; sourceTree = "<group>"; };
 		9EC856C21DE87CC9003C5DC9 /* snare-sumo.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "snare-sumo.wav"; path = "Resources/AudioFiles/snare-sumo.wav"; sourceTree = "<group>"; };
+		9EC856CA1DE8A44B003C5DC9 /* SequenceStepCounter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SequenceStepCounter.swift; path = Helpers/SequenceStepCounter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 			children = (
 				9EAEDF261DE85C8D00560223 /* MotionEngine.swift */,
 				9EAEDF211DE83E6500560223 /* Sequence.swift */,
+				9EC856CA1DE8A44B003C5DC9 /* SequenceStepCounter.swift */,
 				9EAEDF161DE8370100560223 /* CADisplayLinkTimer.swift */,
 			);
 			name = Helpers;
@@ -313,6 +316,7 @@
 				9EAEDF171DE8370100560223 /* CADisplayLinkTimer.swift in Sources */,
 				9EAEDF271DE85C8D00560223 /* MotionEngine.swift in Sources */,
 				9EAEDF251DE83F4C00560223 /* UICollectionViewCell.swift in Sources */,
+				9EC856CB1DE8A44B003C5DC9 /* SequenceStepCounter.swift in Sources */,
 				9E4457BE1DE86E4F005992D0 /* DrumCell.swift in Sources */,
 				9EAEDF221DE83E6500560223 /* Sequence.swift in Sources */,
 				9E4457C11DE86E8B005992D0 /* MainScreenViewModel.swift in Sources */,
