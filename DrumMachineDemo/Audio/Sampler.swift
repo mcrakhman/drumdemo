@@ -10,8 +10,9 @@ import Foundation
 import CoreMotion
 
 enum SamplerConstants {
-    static let startingBpm = 80.0
-    static let additionalBpm = 40.0
+    static let startingBpm = 60.0
+    static let additionalBpm = 30.0
+    static let referenceAcceleration = 2.5
 }
 
 class Sampler {
@@ -19,6 +20,7 @@ class Sampler {
     let sequencer: Sequencer
     let audioEngine: AudioEngine
     let motionEngine: MotionEngine
+    let beatGenerator = BeatGenerator()
     
     init(display: SequencerDisplay) {
         motionEngine = MotionEngine()
@@ -30,6 +32,10 @@ class Sampler {
         sequencer.play()
         motionEngine.startMotionUpdates { data in
             self.sequencer.tempo = self.convertToTempo(data)
+            if data.userAcceleration > SamplerConstants.referenceAcceleration {
+                let sequences = self.beatGenerator.generateSequences(forBars: 2)
+                self.sequencer.load(sequences)
+            }
         }
     }
     

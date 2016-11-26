@@ -64,6 +64,14 @@ struct AdvancedBeatSequence {
         sequence = Array(repeating: stepArray, count: length)
     }
     
+    init(nodes: [[SequenceNode]], instrument: Instruments) {
+        self.length = nodes.count
+        sequence = nodes
+        self.instrument = instrument
+        
+        self.step = BeatStep(rawValue: nodes.first!.count)!
+    }
+    
     init(dictionary: [[[String: Any]]], instrument: Instruments) {
         self.length = dictionary.count
         self.step = BeatStep(rawValue: dictionary.first!.count)!

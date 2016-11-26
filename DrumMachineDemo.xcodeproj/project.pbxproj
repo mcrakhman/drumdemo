@@ -33,6 +33,8 @@
 		9EB7285C1DE9AE5C0007C9D3 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB7285B1DE9AE5C0007C9D3 /* Random.swift */; };
 		9EB7285F1DE9AF030007C9D3 /* ParseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB7285E1DE9AF030007C9D3 /* ParseClient.swift */; };
 		9EB728611DE9BD1C0007C9D3 /* JSONSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB728601DE9BD1C0007C9D3 /* JSONSerializer.swift */; };
+		9EB728631DE9D9F10007C9D3 /* BeatGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB728621DE9D9F10007C9D3 /* BeatGenerator.swift */; };
+		9EB728651DE9E3120007C9D3 /* AccelerationComparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB728641DE9E3120007C9D3 /* AccelerationComparator.swift */; };
 		9EC856B51DE87A95003C5DC9 /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EC856B41DE87A95003C5DC9 /* AudioKit.framework */; };
 		9EC856B81DE87AD7003C5DC9 /* AudioKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9EC856B61DE87AD7003C5DC9 /* AudioKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9EC856C31DE87CC9003C5DC9 /* hihat-plain.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9EC856BC1DE87CC9003C5DC9 /* hihat-plain.wav */; };
@@ -90,6 +92,8 @@
 		9EB7285B1DE9AE5C0007C9D3 /* Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Random.swift; path = Helpers/Random.swift; sourceTree = "<group>"; };
 		9EB7285E1DE9AF030007C9D3 /* ParseClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParseClient.swift; path = CoreComponenets/ParseClient.swift; sourceTree = "<group>"; };
 		9EB728601DE9BD1C0007C9D3 /* JSONSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONSerializer.swift; path = CoreComponenets/JSONSerializer.swift; sourceTree = "<group>"; };
+		9EB728621DE9D9F10007C9D3 /* BeatGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeatGenerator.swift; path = Helpers/BeatGenerator.swift; sourceTree = "<group>"; };
+		9EB728641DE9E3120007C9D3 /* AccelerationComparator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccelerationComparator.swift; path = Helpers/AccelerationComparator.swift; sourceTree = "<group>"; };
 		9EC856B41DE87A95003C5DC9 /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKit.framework; path = Carthage/Build/iOS/AudioKit.framework; sourceTree = "<group>"; };
 		9EC856B61DE87AD7003C5DC9 /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKit.framework; path = Carthage/Build/iOS/AudioKit.framework; sourceTree = "<group>"; };
 		9EC856BC1DE87CC9003C5DC9 /* hihat-plain.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "hihat-plain.wav"; path = "Resources/AudioFiles/hihat-plain.wav"; sourceTree = "<group>"; };
@@ -212,9 +216,11 @@
 		9EAEDF151DE836C200560223 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				9EB728641DE9E3120007C9D3 /* AccelerationComparator.swift */,
 				9EB7285B1DE9AE5C0007C9D3 /* Random.swift */,
 				9E90D3521DE8D014009BB198 /* Promise.swift */,
 				9EAEDF261DE85C8D00560223 /* MotionEngine.swift */,
+				9EB728621DE9D9F10007C9D3 /* BeatGenerator.swift */,
 				9EAEDF211DE83E6500560223 /* Sequence.swift */,
 				9EC856CA1DE8A44B003C5DC9 /* SequenceStepCounter.swift */,
 				9EAEDF161DE8370100560223 /* TempoCounter.swift */,
@@ -398,11 +404,13 @@
 				9E4457BA1DE86E46005992D0 /* MainScreenViewController.swift in Sources */,
 				9EAEDF301DE863C100560223 /* AudioEngine.swift in Sources */,
 				9E90D3561DE8D170009BB198 /* RecordingsScreenViewModel.swift in Sources */,
+				9EB728631DE9D9F10007C9D3 /* BeatGenerator.swift in Sources */,
 				9EAEDF171DE8370100560223 /* TempoCounter.swift in Sources */,
 				9EAEDF271DE85C8D00560223 /* MotionEngine.swift in Sources */,
 				9EAEDF251DE83F4C00560223 /* UICollectionViewCell.swift in Sources */,
 				9EC856CB1DE8A44B003C5DC9 /* SequenceStepCounter.swift in Sources */,
 				9E4457BE1DE86E4F005992D0 /* DrumCell.swift in Sources */,
+				9EB728651DE9E3120007C9D3 /* AccelerationComparator.swift in Sources */,
 				9EAEDF221DE83E6500560223 /* Sequence.swift in Sources */,
 				9EB7285F1DE9AF030007C9D3 /* ParseClient.swift in Sources */,
 				9E4457C11DE86E8B005992D0 /* MainScreenViewModel.swift in Sources */,

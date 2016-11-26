@@ -89,6 +89,14 @@ class Sequencer {
         tempoCounter.handler = sound
     }
     
+    func load(_ sequences: [AdvancedBeatSequence]) {
+        queue.async(flags: .barrier) {
+            self.kickSequence = sequences[0]
+            self.snareSequence = sequences[1]
+            self.hatSequence = sequences[2]
+        }
+    }
+    
     func changeBeatAtCurrentBar(for instrument: Instruments, position: Int) {
         queue.async {
             self.changeBeat(for: instrument, at: self.counter.bar, position: position)
