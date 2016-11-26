@@ -37,6 +37,12 @@ class Sampler {
         sequencer.stop()
     }
     
+    func recordBars() -> Promise<[AdvancedBeatSequence]> {
+        return Promise { fulfill, reject in
+            fulfill([self.sequencer.kickSequence, self.sequencer.snareSequence, self.sequencer.hatSequence])
+        }
+    }
+    
     func changeMode() {
         sequencer.mode = sequencer.mode == .playingTempo ? .recordingTempo : .playingTempo
     }

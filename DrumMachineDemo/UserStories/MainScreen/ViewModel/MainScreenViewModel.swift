@@ -12,6 +12,7 @@ class MainScreenViewModel {
     
     let sampler: Sampler
     let view: MainScreenViewController
+    let parseService = ParseService()
     
     init(view: MainScreenViewController) {
         self.view = view
@@ -27,6 +28,13 @@ class MainScreenViewModel {
     }
     
     func shouldChangeMode() {
-        sampler.changeMode()
+        //sampler.changeMode()
+        sampler.recordBars()
+            .then(onQueue: DispatchQueue.global(), parseService.saveSequences)
+            .then {
+                print("Cool")
+            }.error { error in
+                print(error)
+        }
     }
 }

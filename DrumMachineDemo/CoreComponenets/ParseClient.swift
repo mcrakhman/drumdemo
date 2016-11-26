@@ -1,0 +1,85 @@
+//
+//  ParseClient.swift
+//  DrumMachineDemo
+//
+//  Created by m.rakhmanov on 26.11.16.
+//  Copyright © 2016 m.rakhmanov. All rights reserved.
+//
+
+import Foundation
+import Parse
+import AudioKit
+
+enum ParseError: Error {
+    case failedToCreateFile
+    case failedToDownloadFile
+}
+
+enum ParseClientConstants {
+    static let parseClass = "Sequence"
+    static let parseColumn = "File"
+}
+
+class ParseClient {
+    
+    let constants = ParseClientConstants.self
+    
+    func uploadData(_ data: Data, withName name: String) -> Promise<Void> {
+        return Promise { fulfill, reject in
+            let newObject = PFObject(className: self.constants.parseClass)
+            guard let file = PFFile(name: name, data: data)
+                else {
+                    reject(ParseError.failedToCreateFile)
+                    return
+            }
+            
+            newObject[self.constants.parseColumn] = file
+            
+            newObject.saveInBackground { success, error in
+                if success {
+                    fulfill()
+                } else {
+                    reject(error!)
+                }
+            }
+        }
+    }
+    
+    func downloadRandomFile() -> Promise<Data> {
+        return allPFObjectsFromServer().then(downloadRandomFileFromPFObjects)
+    }
+    
+    func allPFObjectsFromServer() -> Promise<[PFObject]> {
+        return Promise { fulfill, reject in
+            let query = PFQuery(className: self.constants.parseClass)
+            query.findObjectsInBackground { objects, error in
+                guard let objects = objects, error == nil
+                    else {
+                        reject(error!)
+                        return
+                }
+                fulfill(objects)
+            }
+        }
+    }
+    
+    func downloadRandomFileFromPFObjects(_ objects: [PFObject]) -> Promise<Data> {
+        return Promise { fulfill, reject in
+            
+            let randomElement = randomInt(objects.count)
+            
+            if let audio = objects[randomElement][self.constants.parseColumn] as? PFFile {
+                audio.getDataInBackground { data, error in
+                    guard let data = data, error == nil
+                        else {
+                            reject(error!)
+                            return
+                    }
+                    fulfill(data)
+                }
+            } else {
+                reject(ParseError.failedToDownloadFile)
+            }
+        }
+    }
+}

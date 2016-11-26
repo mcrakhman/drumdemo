@@ -13,6 +13,10 @@
 		9E4457C11DE86E8B005992D0 /* MainScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4457C01DE86E8B005992D0 /* MainScreenViewModel.swift */; };
 		9E90D3531DE8D014009BB198 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E90D3521DE8D014009BB198 /* Promise.swift */; };
 		9E90D3561DE8D170009BB198 /* RecordingsScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E90D3551DE8D170009BB198 /* RecordingsScreenViewModel.swift */; };
+		9E90D3591DE989BB009BB198 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E90D3571DE989BB009BB198 /* Bolts.framework */; };
+		9E90D35A1DE989BB009BB198 /* Bolts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9E90D3571DE989BB009BB198 /* Bolts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9E90D35B1DE989BB009BB198 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E90D3581DE989BB009BB198 /* Parse.framework */; };
+		9E90D35C1DE989BB009BB198 /* Parse.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9E90D3581DE989BB009BB198 /* Parse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9EAEDF041DE8365E00560223 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAEDF031DE8365E00560223 /* AppDelegate.swift */; };
 		9EAEDF091DE8365E00560223 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EAEDF071DE8365E00560223 /* Main.storyboard */; };
 		9EAEDF0B1DE8365E00560223 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EAEDF0A1DE8365E00560223 /* Assets.xcassets */; };
@@ -25,6 +29,10 @@
 		9EAEDF2C1DE8614100560223 /* Instruments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAEDF2B1DE8614100560223 /* Instruments.swift */; };
 		9EAEDF2E1DE8639800560223 /* Sampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAEDF2D1DE8639800560223 /* Sampler.swift */; };
 		9EAEDF301DE863C100560223 /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAEDF2F1DE863C100560223 /* AudioEngine.swift */; };
+		9EB7285A1DE9A1950007C9D3 /* ParseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB728591DE9A1950007C9D3 /* ParseService.swift */; };
+		9EB7285C1DE9AE5C0007C9D3 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB7285B1DE9AE5C0007C9D3 /* Random.swift */; };
+		9EB7285F1DE9AF030007C9D3 /* ParseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB7285E1DE9AF030007C9D3 /* ParseClient.swift */; };
+		9EB728611DE9BD1C0007C9D3 /* JSONSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB728601DE9BD1C0007C9D3 /* JSONSerializer.swift */; };
 		9EC856B51DE87A95003C5DC9 /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EC856B41DE87A95003C5DC9 /* AudioKit.framework */; };
 		9EC856B81DE87AD7003C5DC9 /* AudioKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9EC856B61DE87AD7003C5DC9 /* AudioKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9EC856C31DE87CC9003C5DC9 /* hihat-plain.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9EC856BC1DE87CC9003C5DC9 /* hihat-plain.wav */; };
@@ -47,6 +55,8 @@
 			dstSubfolderSpec = 10;
 			files = (
 				9EC856B81DE87AD7003C5DC9 /* AudioKit.framework in Embed Frameworks */,
+				9E90D35C1DE989BB009BB198 /* Parse.framework in Embed Frameworks */,
+				9E90D35A1DE989BB009BB198 /* Bolts.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -60,6 +70,8 @@
 		9E4457C01DE86E8B005992D0 /* MainScreenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainScreenViewModel.swift; path = UserStories/MainScreen/ViewModel/MainScreenViewModel.swift; sourceTree = "<group>"; };
 		9E90D3521DE8D014009BB198 /* Promise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Promise.swift; path = Helpers/Promise.swift; sourceTree = "<group>"; };
 		9E90D3551DE8D170009BB198 /* RecordingsScreenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecordingsScreenViewModel.swift; path = UserStories/RecordingsScreen/ViewModel/RecordingsScreenViewModel.swift; sourceTree = "<group>"; };
+		9E90D3571DE989BB009BB198 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Carthage/Build/iOS/Bolts.framework; sourceTree = "<group>"; };
+		9E90D3581DE989BB009BB198 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Carthage/Build/iOS/Parse.framework; sourceTree = "<group>"; };
 		9EAEDF001DE8365E00560223 /* DrumMachineDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrumMachineDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EAEDF031DE8365E00560223 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9EAEDF081DE8365E00560223 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -74,6 +86,10 @@
 		9EAEDF2B1DE8614100560223 /* Instruments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Instruments.swift; path = Audio/Instruments.swift; sourceTree = "<group>"; };
 		9EAEDF2D1DE8639800560223 /* Sampler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Sampler.swift; path = Audio/Sampler.swift; sourceTree = "<group>"; };
 		9EAEDF2F1DE863C100560223 /* AudioEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AudioEngine.swift; path = Audio/AudioEngine.swift; sourceTree = "<group>"; };
+		9EB728591DE9A1950007C9D3 /* ParseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParseService.swift; path = Services/ParseService.swift; sourceTree = "<group>"; };
+		9EB7285B1DE9AE5C0007C9D3 /* Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Random.swift; path = Helpers/Random.swift; sourceTree = "<group>"; };
+		9EB7285E1DE9AF030007C9D3 /* ParseClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParseClient.swift; path = CoreComponenets/ParseClient.swift; sourceTree = "<group>"; };
+		9EB728601DE9BD1C0007C9D3 /* JSONSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONSerializer.swift; path = CoreComponenets/JSONSerializer.swift; sourceTree = "<group>"; };
 		9EC856B41DE87A95003C5DC9 /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKit.framework; path = Carthage/Build/iOS/AudioKit.framework; sourceTree = "<group>"; };
 		9EC856B61DE87AD7003C5DC9 /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKit.framework; path = Carthage/Build/iOS/AudioKit.framework; sourceTree = "<group>"; };
 		9EC856BC1DE87CC9003C5DC9 /* hihat-plain.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "hihat-plain.wav"; path = "Resources/AudioFiles/hihat-plain.wav"; sourceTree = "<group>"; };
@@ -94,6 +110,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EC856B51DE87A95003C5DC9 /* AudioKit.framework in Frameworks */,
+				9E90D35B1DE989BB009BB198 /* Parse.framework in Frameworks */,
+				9E90D3591DE989BB009BB198 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +173,8 @@
 		9EAEDEF71DE8365E00560223 = {
 			isa = PBXGroup;
 			children = (
+				9E90D3571DE989BB009BB198 /* Bolts.framework */,
+				9E90D3581DE989BB009BB198 /* Parse.framework */,
 				9EC856B61DE87AD7003C5DC9 /* AudioKit.framework */,
 				9EAEDF021DE8365E00560223 /* DrumMachineDemo */,
 				9EAEDF011DE8365E00560223 /* Products */,
@@ -173,6 +193,8 @@
 		9EAEDF021DE8365E00560223 /* DrumMachineDemo */ = {
 			isa = PBXGroup;
 			children = (
+				9EB7285D1DE9AEE70007C9D3 /* CoreComponents */,
+				9EB728581DE9A1540007C9D3 /* Services */,
 				9EC856BA1DE87C7F003C5DC9 /* Resources */,
 				9E4457B51DE86E00005992D0 /* UserStories */,
 				9EAEDF281DE85D2D00560223 /* Audio */,
@@ -190,6 +212,7 @@
 		9EAEDF151DE836C200560223 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				9EB7285B1DE9AE5C0007C9D3 /* Random.swift */,
 				9E90D3521DE8D014009BB198 /* Promise.swift */,
 				9EAEDF261DE85C8D00560223 /* MotionEngine.swift */,
 				9EAEDF211DE83E6500560223 /* Sequence.swift */,
@@ -216,6 +239,23 @@
 				9EAEDF2B1DE8614100560223 /* Instruments.swift */,
 			);
 			name = Audio;
+			sourceTree = "<group>";
+		};
+		9EB728581DE9A1540007C9D3 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9EB728591DE9A1950007C9D3 /* ParseService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		9EB7285D1DE9AEE70007C9D3 /* CoreComponents */ = {
+			isa = PBXGroup;
+			children = (
+				9EB728601DE9BD1C0007C9D3 /* JSONSerializer.swift */,
+				9EB7285E1DE9AF030007C9D3 /* ParseClient.swift */,
+			);
+			name = CoreComponents;
 			sourceTree = "<group>";
 		};
 		9EC856B31DE87A94003C5DC9 /* Frameworks */ = {
@@ -364,8 +404,12 @@
 				9EC856CB1DE8A44B003C5DC9 /* SequenceStepCounter.swift in Sources */,
 				9E4457BE1DE86E4F005992D0 /* DrumCell.swift in Sources */,
 				9EAEDF221DE83E6500560223 /* Sequence.swift in Sources */,
+				9EB7285F1DE9AF030007C9D3 /* ParseClient.swift in Sources */,
 				9E4457C11DE86E8B005992D0 /* MainScreenViewModel.swift in Sources */,
 				9EAEDF2E1DE8639800560223 /* Sampler.swift in Sources */,
+				9EB7285A1DE9A1950007C9D3 /* ParseService.swift in Sources */,
+				9EB728611DE9BD1C0007C9D3 /* JSONSerializer.swift in Sources */,
+				9EB7285C1DE9AE5C0007C9D3 /* Random.swift in Sources */,
 				9EAEDF041DE8365E00560223 /* AppDelegate.swift in Sources */,
 				9EAEDF2C1DE8614100560223 /* Instruments.swift in Sources */,
 				9E4457BD1DE86E4F005992D0 /* ArrowDownCell.swift in Sources */,
