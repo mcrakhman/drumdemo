@@ -10,7 +10,8 @@ import UIKit
 
 enum MainScrenConstants {
     static let cellsPerScreen = 16
-    static let alertControllerTitle = "Уведомление"
+    static let alertControllerTitle = "Notification"
+    static let blinkDuration = 0.5
 }
 
 class MainScreenViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, SequencerDisplay {
@@ -129,11 +130,19 @@ class MainScreenViewController: UIViewController, UICollectionViewDataSource, UI
     }
     
     func animateRecord(_ animate: Bool) {
-        
+        if animate {
+            recordButton.blink(constants.blinkDuration)
+        } else {
+            recordButton.layer.removeAllAnimations()
+        }
     }
     
     func animateDownload(_ animate: Bool) {
-        
+        if animate {
+            downloadButton.blink(constants.blinkDuration)
+        } else {
+            downloadButton.layer.removeAllAnimations()
+        }
     }
     
     func showAlert(message: String) {

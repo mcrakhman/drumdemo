@@ -24,6 +24,14 @@ class MainScreenViewModel {
     var recordingPromise: Promise<Void>?
     var downloadingPromise: Promise<Void>?
     
+    var recordingPromiseResolved: Bool {
+        return recordingPromise != nil && recordingPromise!.result != nil
+    }
+    
+    var downloadingPromiseResolved: Bool {
+        return downloadingPromise != nil && downloadingPromise!.result != nil
+    }
+    
     init(view: MainScreenViewController) {
         self.view = view
         sampler = Sampler(display: view)
