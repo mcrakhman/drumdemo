@@ -25,7 +25,7 @@ class TempoCounter {
     
     var tempo = 60.0
     var beatStep = BeatStep.fourth
-    var handler: Handler?
+    var handlers: [Handler] = []
     
     var isRunning: Bool {
         return !displayLink.isPaused
@@ -50,12 +50,24 @@ class TempoCounter {
         displayLink.isPaused = true
     }
     
+    func addHandler(_ handler: @escaping Handler) {
+        handlers.append(handler)
+    }
+    
+    func removeLast() {
+        guard handlers.count > 0 else { return }
+        _ = handlers.remove(at: handlers.count - 1)
+    }
+    
     @objc func fire() {
         internalCounter += 1
         
         if internalCounter >= nextTickLength {
             internalCounter = 0
-            handler?()
+            
+            for handler in handlers {
+                handler()
+            }
         }
     }
 }

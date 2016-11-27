@@ -86,7 +86,7 @@ class Sequencer {
                               qos: .userInteractive,
                               attributes: .concurrent)
         
-        tempoCounter.handler = sound
+        tempoCounter.addHandler(sound)
     }
     
     func load(_ sequences: [AdvancedBeatSequence]) {
@@ -94,6 +94,27 @@ class Sequencer {
             self.kickSequence = sequences[0]
             self.snareSequence = sequences[1]
             self.hatSequence = sequences[2]
+        }
+    }
+    
+    func recordSequence() -> Promise<[AdvancedBeatSequence]> {
+        return Promise<[AdvancedBeatSequence]> { fulfill, reject in
+            var counter = SequenceStepCounter(length: self.counter.length, step: self.counter.step)
+            var recordingStarted = false
+            
+            self.tempoCounter.addHandler {
+                if self.counter.atEndOfBar {
+                    recordingStarted = true
+                }
+                if recordingStarted {
+                    counter.increment()
+                    
+                    if counter.atStartOfSequence {
+                        fulfill([self.kickSequence, self.snareSequence, self.hatSequence])
+                        self.tempoCounter.removeLast()
+                    }
+                }
+            }
         }
     }
     
@@ -112,6 +133,7 @@ class Sequencer {
     func stop() {
         queue.async {
             self.tempoCounter.stop()
+            self.counter.reset()
         }
     }
 

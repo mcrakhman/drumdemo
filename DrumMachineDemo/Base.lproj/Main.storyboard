@@ -220,18 +220,30 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OzQ-v0-7mz">
                                         <rect key="frame" x="0.0" y="0.0" width="16" height="22"/>
                                         <state key="normal" image="cross"/>
+                                        <connections>
+                                            <action selector="recordButtonTapped:" destination="POW-xQ-Y9y" eventType="touchUpInside" id="MEn-IP-qtW"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dha-Ko-hXn">
                                         <rect key="frame" x="36" y="0.0" width="16" height="22"/>
                                         <state key="normal" image="cross"/>
+                                        <connections>
+                                            <action selector="playButtonTapped:" destination="POW-xQ-Y9y" eventType="touchUpInside" id="iA2-7r-Csh"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fqv-tz-cmY">
                                         <rect key="frame" x="72" y="0.0" width="16" height="22"/>
                                         <state key="normal" image="cross"/>
+                                        <connections>
+                                            <action selector="downloadButtonTapped:" destination="POW-xQ-Y9y" eventType="touchUpInside" id="wxA-bh-kDc"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fop-Nh-SUd">
                                         <rect key="frame" x="108" y="0.0" width="16" height="22"/>
                                         <state key="normal" image="cross"/>
+                                        <connections>
+                                            <action selector="modeButtonTapped:" destination="POW-xQ-Y9y" eventType="touchUpInside" id="mmn-X5-UUY"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -243,12 +255,18 @@
                                         <state key="normal" title="1">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="firstBarButtonTapped:" destination="POW-xQ-Y9y" eventType="touchUpInside" id="3nH-jg-X2m"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zkp-WT-8KU">
                                         <rect key="frame" x="50" y="0.0" width="30" height="30"/>
                                         <state key="normal" title="2">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="secondBarButtonTapped:" destination="POW-xQ-Y9y" eventType="touchUpInside" id="oRL-ve-GIE"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -287,8 +305,14 @@
                     <connections>
                         <outlet property="arrowDownCollectionView" destination="8rR-F6-HRt" id="QAh-DC-WD6"/>
                         <outlet property="collectionStackView" destination="643-AT-jyP" id="F4V-O9-rvl"/>
+                        <outlet property="downloadButton" destination="Fqv-tz-cmY" id="whN-90-QIz"/>
+                        <outlet property="firstBarButton" destination="9eq-oC-CCW" id="Cuh-Kh-vZJ"/>
                         <outlet property="hatCollectionView" destination="OSu-vA-pdS" id="aFc-Mw-Tdb"/>
                         <outlet property="kickCollectionView" destination="jry-Wz-7Iz" id="DEc-a6-5va"/>
+                        <outlet property="modeButton" destination="Fop-Nh-SUd" id="snc-H2-gHE"/>
+                        <outlet property="playButton" destination="dha-Ko-hXn" id="flg-Eu-J8u"/>
+                        <outlet property="recordButton" destination="OzQ-v0-7mz" id="gFV-RG-lnk"/>
+                        <outlet property="secondBarButton" destination="zkp-WT-8KU" id="4B4-Vg-4k0"/>
                         <outlet property="snareCollectionView" destination="fCp-f6-69I" id="I9y-hK-bC1"/>
                         <outlet property="tempoLabel" destination="Z92-iC-iGY" id="lMW-GL-Uqu"/>
                     </connections>

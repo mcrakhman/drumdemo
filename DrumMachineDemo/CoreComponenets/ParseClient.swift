@@ -24,8 +24,10 @@ class ParseClient {
     
     let constants = ParseClientConstants.self
     
+    let queue = DispatchQueue.global()
+    
     func uploadData(_ data: Data, withName name: String) -> Promise<Void> {
-        return Promise { fulfill, reject in
+        return Promise(onQueue: queue) { fulfill, reject in
             let newObject = PFObject(className: self.constants.parseClass)
             guard let file = PFFile(name: name, data: data)
                 else {
@@ -50,7 +52,7 @@ class ParseClient {
     }
     
     func allPFObjectsFromServer() -> Promise<[PFObject]> {
-        return Promise { fulfill, reject in
+        return Promise(onQueue: queue) { fulfill, reject in
             let query = PFQuery(className: self.constants.parseClass)
             query.findObjectsInBackground { objects, error in
                 guard let objects = objects, error == nil
@@ -64,7 +66,7 @@ class ParseClient {
     }
     
     func downloadRandomFileFromPFObjects(_ objects: [PFObject]) -> Promise<Data> {
-        return Promise { fulfill, reject in
+        return Promise(onQueue: queue) { fulfill, reject in
             
             let randomElement = randomInt(objects.count)
             

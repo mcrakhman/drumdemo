@@ -10,6 +10,7 @@ import UIKit
 
 enum MainScrenConstants {
     static let cellsPerScreen = 16
+    static let alertControllerTitle = "Уведомление"
 }
 
 class MainScreenViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, SequencerDisplay {
@@ -20,6 +21,15 @@ class MainScreenViewController: UIViewController, UICollectionViewDataSource, UI
     @IBOutlet weak var hatCollectionView: UICollectionView!
     @IBOutlet weak var snareCollectionView: UICollectionView!
     @IBOutlet weak var collectionStackView: UIStackView!
+    
+    // Buttons
+    
+    @IBOutlet weak var firstBarButton: UIButton!
+    @IBOutlet weak var secondBarButton: UIButton!
+    @IBOutlet weak var recordButton: UIButton!
+    @IBOutlet weak var downloadButton: UIButton!
+    @IBOutlet weak var modeButton: UIButton!
+    @IBOutlet weak var playButton: UIButton!
     
     var viewModel: MainScreenViewModel!
     
@@ -33,10 +43,7 @@ class MainScreenViewController: UIViewController, UICollectionViewDataSource, UI
         viewModel.viewIsReady()
     }
     
-    @IBAction func changeMode(_ sender: Any) {
-        viewModel.shouldChangeMode()
-    }
-    // MARK: Конфигурация
+    // MARK: CollectionViewConfiguration
     
     private func configureCollectionViews() {
         for view in collectionStackView.subviews {
@@ -101,6 +108,69 @@ class MainScreenViewController: UIViewController, UICollectionViewDataSource, UI
         default:
             return .kick
         }
+    }
+    
+    // MARK: StateChanges
+    
+    func changePlayingState(_ isPlaying: Bool) {
+        if isPlaying {
+            playButton.setImage(UIImage.pause, for: .normal)
+        } else {
+            playButton.setImage(UIImage.play, for: .normal)
+        }
+    }
+    
+    func changeModeState(_ mode: SequencerMode) {
+        if mode == .playingTempo {
+            modeButton.setTitle("R", for: .normal)
+        } else {
+            modeButton.setTitle("W", for: .normal)
+        }
+    }
+    
+    func animateRecord(_ animate: Bool) {
+        
+    }
+    
+    func animateDownload(_ animate: Bool) {
+        
+    }
+    
+    func showAlert(message: String) {
+        let alertController = UIAlertController(title: constants.alertControllerTitle,
+                                                message: message,
+                                                preferredStyle: .alert)
+        let action = UIAlertAction(title: "Ок",
+                                   style: .default,
+                                   handler: nil)
+        alertController.addAction(action)
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    // MARK: ButtonActions
+    
+    @IBAction func firstBarButtonTapped(_ sender: Any) {
+        viewModel.didTap(bar: 1)
+    }
+    
+    @IBAction func secondBarButtonTapped(_ sender: Any) {
+        viewModel.didTap(bar: 2)
+    }
+    
+    @IBAction func recordButtonTapped(_ sender: Any) {
+        viewModel.didTapRecord()
+    }
+    
+    @IBAction func playButtonTapped(_ sender: Any) {
+        viewModel.didTapPlay()
+    }
+    
+    @IBAction func downloadButtonTapped(_ sender: Any) {
+        viewModel.didTapDownload()
+    }
+    
+    @IBAction func modeButtonTapped(_ sender: Any) {
+        viewModel.didTapMode()
     }
     
     // MARK: UICollectionViewDataSource

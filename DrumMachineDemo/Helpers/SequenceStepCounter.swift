@@ -10,13 +10,17 @@ import Foundation
 
 struct SequenceStepCounter {
     
-    private let length: Int
-    private let step: BeatStep
+    let length: Int
+    let step: BeatStep
     
     private var _counter: Int
     
     var atEndOfBar: Bool {
         return position == 0
+    }
+    
+    var atStartOfSequence: Bool {
+        return _counter == 0
     }
     
     var position: Int {

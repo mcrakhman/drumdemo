@@ -22,6 +22,14 @@ class Sampler {
     let motionEngine: MotionEngine
     let beatGenerator = BeatGenerator()
     
+    var isPlaying: Bool {
+        return sequencer.isPlaying
+    }
+    
+    var mode: SequencerMode {
+        return sequencer.mode
+    }
+    
     init(display: SequencerDisplay) {
         motionEngine = MotionEngine()
         audioEngine = AudioEngine()
@@ -44,21 +52,19 @@ class Sampler {
     }
     
     func recordBars() -> Promise<[AdvancedBeatSequence]> {
-        return Promise { fulfill, reject in
-            fulfill([self.sequencer.kickSequence, self.sequencer.snareSequence, self.sequencer.hatSequence])
-        }
+        return sequencer.recordSequence()
     }
     
-    func changeMode() {
-        sequencer.mode = sequencer.mode == .playingTempo ? .recordingTempo : .playingTempo
+    func changeMode(_ mode: SequencerMode) {
+        sequencer.mode = mode
     }
     
     func changeBeat(for instrument: Instruments, position: Int) {
         sequencer.changeBeatAtCurrentBar(for: instrument, position: position)
     }
     
-    func load(_ beatSequence: BeatSequence, for instrument: Instruments) {
-        
+    func load(_ sequences: [AdvancedBeatSequence]) {
+        sequencer.load(sequences)
     }
     
     private func convertToTempo(_ motion: CMDeviceMotion) -> Double {

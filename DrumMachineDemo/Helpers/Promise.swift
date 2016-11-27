@@ -82,6 +82,7 @@ class Promise<T> {
         }
     }
     
+    @discardableResult
     func then(onQueue q: DispatchQueue = DispatchQueue.main, _ closure: @escaping (T) throws -> Void) -> Promise<Void> {
         return Promise<Void> { resolve, reject in
             self.tryHandler { result in
@@ -103,6 +104,7 @@ class Promise<T> {
         }
     }
     
+    @discardableResult
     func then<U>(onQueue q: DispatchQueue = DispatchQueue.main, _ closure: @escaping (T) throws -> Promise<U>) -> Promise<U> {
         var result: Promise<U>!
         
@@ -127,6 +129,7 @@ class Promise<T> {
         return result
     }
     
+    @discardableResult
     func then<U>(onQueue q: DispatchQueue = DispatchQueue.main, _ closure: @escaping (T) throws -> U) -> Promise<U> {
         return Promise<U> { resolve, reject in
             self.tryHandler { result in
@@ -148,6 +151,7 @@ class Promise<T> {
         }
     }
     
+    @discardableResult
     func thenDelayed<U>(onQueue q: DispatchQueue = DispatchQueue.main, delay: TimeInterval, _ closure: @escaping (T) throws -> U) -> Promise<U> {
         return Promise<U> { resolve, reject in
             self.tryHandler { result in
@@ -169,6 +173,7 @@ class Promise<T> {
         }
     }
     
+    @discardableResult
     func error(_ closure: @escaping (Error) -> Void) -> Promise<T> {
         tryHandler { result in
             switch result {
