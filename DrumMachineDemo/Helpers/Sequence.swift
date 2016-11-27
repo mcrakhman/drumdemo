@@ -24,7 +24,7 @@ struct SequenceNode {
     let constants = SequenceNodeConstants.self
     
     static var empty: SequenceNode {
-        return SequenceNode(tempo: 0, velocity: 127, enabled: false)
+        return SequenceNode(tempo: 80, velocity: 127, enabled: false)
     }
     
     init(tempo: Double, velocity: Int, enabled: Bool) {
