@@ -12,6 +12,7 @@ enum MainScrenConstants {
     static let cellsPerScreen = 16
     static let alertControllerTitle = "Notification"
     static let blinkDuration = 0.5
+    static let alertControllerButtonTitle = "Ok"
 }
 
 class MainScreenViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, SequencerDisplay {
@@ -149,11 +150,12 @@ class MainScreenViewController: UIViewController, UICollectionViewDataSource, UI
         let alertController = UIAlertController(title: constants.alertControllerTitle,
                                                 message: message,
                                                 preferredStyle: .alert)
-        let action = UIAlertAction(title: "Ок",
+        let action = UIAlertAction(title: constants.alertControllerButtonTitle,
                                    style: .default,
                                    handler: nil)
         alertController.addAction(action)
         present(alertController, animated: true, completion: nil)
+        alertController.view.tintColor = UIColor.black
     }
     
     // MARK: ButtonActions
