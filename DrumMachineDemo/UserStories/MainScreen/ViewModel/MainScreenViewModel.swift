@@ -10,6 +10,7 @@ import Foundation
 
 enum MainScreenViewModelConstants {
     static let downloadComplete = "Download complete"
+    static let downloadFailed = "Download failed"
     static let uploadComplete = "Upload complete"
     static let uploadFailed = "Upload failed"
 }
@@ -21,6 +22,7 @@ class MainScreenViewModel {
     let parseService = ParseService()
     
     var recordingPromise: Promise<Void>?
+    var downloadingPromise: Promise<Void>?
     
     init(view: MainScreenViewController) {
         self.view = view
@@ -45,14 +47,16 @@ class MainScreenViewModel {
         
         view.animateRecord(true)
         sampler.changeMode(.recordingTempo)
-        view.changeModeState(.recordingTempo)
+        view.changeMode(.recordingTempo)
+        
         recordingPromise =
             sampler.recordBars()
             .then(parseService.saveSequences)
             .then {
                 self.view.animateRecord(false)
                 self.view.showAlert(message: MainScreenViewModelConstants.uploadComplete)
-            }.error { error in
+            }
+            .error { error in
                 self.view.animateRecord(false)
                 self.view.showAlert(message: MainScreenViewModelConstants.uploadFailed)
         }
@@ -69,16 +73,25 @@ class MainScreenViewModel {
     }
     
     func didTapDownload() {
+        if let promise = downloadingPromise, promise.result == nil {
+            return
+        }
+        
         view.animateDownload(true)
         sampler.changeMode(.playingTempo)
-        view.changeModeState(.playingTempo)
-        parseService
-            .loadRandomSequences()
+        view.changeMode(.playingTempo)
+        
+        downloadingPromise =
+            parseService.loadRandomSequences()
             .then(sampler.load)
             .then {
                 self.view.animateDownload(false)
                 self.view.showAlert(message: MainScreenViewModelConstants.downloadComplete)
-        }
+            }
+            .error { error in
+                self.view.animateDownload(false)
+                self.view.showAlert(message: MainScreenViewModelConstants.downloadFailed)
+            }
     }
     
     func didTapMode() {
@@ -89,6 +102,6 @@ class MainScreenViewModel {
             newMode = .playingTempo
         }
         sampler.changeMode(newMode)
-        view.changeModeState(newMode)
+        view.changeMode(newMode)
     }
 }

@@ -11,18 +11,18 @@ import UIKit
 
 extension UIImage {
     static var record: UIImage {
-        return UIImage(named: "checkmarkInactive")!
+        return UIImage(named: "record")!
     }
     
     static var play: UIImage {
-        return UIImage(named: "cross")!
+        return UIImage(named: "play")!
     }
     
     static var pause: UIImage {
-        return UIImage(named: "checkmarkInactive")!
+        return UIImage(named: "pause")!
     }
     
     static var download: UIImage {
-        return UIImage(named: "checkmarkInactive")!
+        return UIImage(named: "newDownload")!
     }
 }

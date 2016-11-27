@@ -36,6 +36,7 @@
 		9EB728631DE9D9F10007C9D3 /* BeatGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB728621DE9D9F10007C9D3 /* BeatGenerator.swift */; };
 		9EB728651DE9E3120007C9D3 /* AccelerationComparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB728641DE9E3120007C9D3 /* AccelerationComparator.swift */; };
 		9EB728671DEA20F90007C9D3 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB728661DEA20F90007C9D3 /* UIImage.swift */; };
+		9EB728691DEAD7DA0007C9D3 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB728681DEAD7DA0007C9D3 /* CircleButton.swift */; };
 		9EC856B51DE87A95003C5DC9 /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EC856B41DE87A95003C5DC9 /* AudioKit.framework */; };
 		9EC856B81DE87AD7003C5DC9 /* AudioKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9EC856B61DE87AD7003C5DC9 /* AudioKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9EC856C31DE87CC9003C5DC9 /* hihat-plain.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9EC856BC1DE87CC9003C5DC9 /* hihat-plain.wav */; };
@@ -96,6 +97,7 @@
 		9EB728621DE9D9F10007C9D3 /* BeatGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeatGenerator.swift; path = Helpers/BeatGenerator.swift; sourceTree = "<group>"; };
 		9EB728641DE9E3120007C9D3 /* AccelerationComparator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccelerationComparator.swift; path = Helpers/AccelerationComparator.swift; sourceTree = "<group>"; };
 		9EB728661DEA20F90007C9D3 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIImage.swift; path = Extensions/UIImage.swift; sourceTree = "<group>"; };
+		9EB728681DEAD7DA0007C9D3 /* CircleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CircleButton.swift; path = UserStories/MainScreen/View/CircleButton.swift; sourceTree = "<group>"; };
 		9EC856B41DE87A95003C5DC9 /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKit.framework; path = Carthage/Build/iOS/AudioKit.framework; sourceTree = "<group>"; };
 		9EC856B61DE87AD7003C5DC9 /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKit.framework; path = Carthage/Build/iOS/AudioKit.framework; sourceTree = "<group>"; };
 		9EC856BC1DE87CC9003C5DC9 /* hihat-plain.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "hihat-plain.wav"; path = "Resources/AudioFiles/hihat-plain.wav"; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 		9E4457B71DE86E2A005992D0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9EB728681DEAD7DA0007C9D3 /* CircleButton.swift */,
 				9E4457B91DE86E46005992D0 /* MainScreenViewController.swift */,
 				9E4457B81DE86E34005992D0 /* Cells */,
 			);
@@ -409,6 +412,7 @@
 				9EAEDF301DE863C100560223 /* AudioEngine.swift in Sources */,
 				9E90D3561DE8D170009BB198 /* RecordingsScreenViewModel.swift in Sources */,
 				9EB728631DE9D9F10007C9D3 /* BeatGenerator.swift in Sources */,
+				9EB728691DEAD7DA0007C9D3 /* CircleButton.swift in Sources */,
 				9EAEDF171DE8370100560223 /* TempoCounter.swift in Sources */,
 				9EAEDF271DE85C8D00560223 /* MotionEngine.swift in Sources */,
 				9EAEDF251DE83F4C00560223 /* UICollectionViewCell.swift in Sources */,

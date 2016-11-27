@@ -214,33 +214,50 @@
                                     </mask>
                                 </variation>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="DbF-TW-YPa">
-                                <rect key="frame" x="126" y="428.5" width="124" height="22"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="DbF-TW-YPa">
+                                <rect key="frame" x="88" y="428.5" width="200" height="20"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OzQ-v0-7mz">
-                                        <rect key="frame" x="0.0" y="0.0" width="16" height="22"/>
-                                        <state key="normal" image="cross"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="szQ-l4-4Iq"/>
+                                            <constraint firstAttribute="height" constant="20" id="tNH-be-jrK"/>
+                                        </constraints>
+                                        <state key="normal" image="record"/>
                                         <connections>
                                             <action selector="recordButtonTapped:" destination="POW-xQ-Y9y" eventType="touchUpInside" id="MEn-IP-qtW"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dha-Ko-hXn">
-                                        <rect key="frame" x="36" y="0.0" width="16" height="22"/>
-                                        <state key="normal" image="cross"/>
+                                        <rect key="frame" x="60" y="0.0" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="Wbm-TC-uMu"/>
+                                            <constraint firstAttribute="height" constant="20" id="ulf-Ht-cAi"/>
+                                        </constraints>
+                                        <state key="normal" image="pause"/>
                                         <connections>
                                             <action selector="playButtonTapped:" destination="POW-xQ-Y9y" eventType="touchUpInside" id="iA2-7r-Csh"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fqv-tz-cmY">
-                                        <rect key="frame" x="72" y="0.0" width="16" height="22"/>
-                                        <state key="normal" image="cross"/>
+                                        <rect key="frame" x="120" y="0.0" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="8PY-DR-Det"/>
+                                            <constraint firstAttribute="width" constant="20" id="p24-h8-Rv2"/>
+                                        </constraints>
+                                        <state key="normal" image="newDownload"/>
                                         <connections>
                                             <action selector="downloadButtonTapped:" destination="POW-xQ-Y9y" eventType="touchUpInside" id="wxA-bh-kDc"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fop-Nh-SUd">
-                                        <rect key="frame" x="108" y="0.0" width="16" height="22"/>
-                                        <state key="normal" image="cross"/>
+                                        <rect key="frame" x="180" y="0.0" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="Zn9-ec-MyE"/>
+                                            <constraint firstAttribute="width" constant="20" id="l6s-jX-dw1"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <state key="normal" title="W"/>
                                         <connections>
                                             <action selector="modeButtonTapped:" destination="POW-xQ-Y9y" eventType="touchUpInside" id="mmn-X5-UUY"/>
                                         </connections>
@@ -250,7 +267,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="TzV-1Q-8n1">
                                 <rect key="frame" x="147.5" y="228.5" width="80" height="30"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9eq-oC-CCW">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9eq-oC-CCW" customClass="CircleButton" customModule="DrumMachineDemo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                         <state key="normal" title="1">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -259,7 +276,7 @@
                                             <action selector="firstBarButtonTapped:" destination="POW-xQ-Y9y" eventType="touchUpInside" id="3nH-jg-X2m"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zkp-WT-8KU">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zkp-WT-8KU" customClass="CircleButton" customModule="DrumMachineDemo" customModuleProvider="target">
                                         <rect key="frame" x="50" y="0.0" width="30" height="30"/>
                                         <state key="normal" title="2">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -386,6 +403,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cross" width="16" height="16"/>
+        <image name="newDownload" width="256" height="256"/>
+        <image name="pause" width="256" height="256"/>
+        <image name="record" width="256" height="256"/>
     </resources>
 </document>

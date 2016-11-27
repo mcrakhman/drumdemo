@@ -94,6 +94,13 @@ class Sequencer {
             self.kickSequence = sequences[0]
             self.snareSequence = sequences[1]
             self.hatSequence = sequences[2]
+            
+            let bar = self.counter.bar
+            DispatchQueue.main.async {
+                self.display.shouldUpdate(kickSequence: self.kickSequence[bar],
+                                          snareSequence: self.snareSequence[bar],
+                                          hatSequence: self.hatSequence[bar])
+            }
         }
     }
     
@@ -133,7 +140,6 @@ class Sequencer {
     func stop() {
         queue.async {
             self.tempoCounter.stop()
-            self.counter.reset()
         }
     }
 

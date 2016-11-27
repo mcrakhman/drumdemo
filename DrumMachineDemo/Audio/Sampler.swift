@@ -38,8 +38,10 @@ class Sampler {
     
     func play() {
         sequencer.play()
+        
         motionEngine.startMotionUpdates { data in
             self.sequencer.tempo = self.convertToTempo(data)
+            
             if data.userAcceleration > SamplerConstants.referenceAcceleration {
                 let sequences = self.beatGenerator.generateSequences(forBars: 2)
                 self.sequencer.load(sequences)

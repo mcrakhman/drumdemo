@@ -24,8 +24,8 @@ class MainScreenViewController: UIViewController, UICollectionViewDataSource, UI
     
     // Buttons
     
-    @IBOutlet weak var firstBarButton: UIButton!
-    @IBOutlet weak var secondBarButton: UIButton!
+    @IBOutlet weak var firstBarButton: CircleButton!
+    @IBOutlet weak var secondBarButton: CircleButton!
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var downloadButton: UIButton!
     @IBOutlet weak var modeButton: UIButton!
@@ -120,7 +120,7 @@ class MainScreenViewController: UIViewController, UICollectionViewDataSource, UI
         }
     }
     
-    func changeModeState(_ mode: SequencerMode) {
+    func changeMode(_ mode: SequencerMode) {
         if mode == .playingTempo {
             modeButton.setTitle("R", for: .normal)
         } else {
@@ -205,8 +205,15 @@ class MainScreenViewController: UIViewController, UICollectionViewDataSource, UI
     // MARK: SequencerDisplay
     
     func show(_ configuration: SequencerDisplayConfiguration) {
+        if configuration.bar == 0 {
+            firstBarButton.visualState = .selected
+            secondBarButton.visualState = .unselected
+        } else {
+            firstBarButton.visualState = .unselected
+            secondBarButton.visualState = .selected
+        }
         setArrowGrid(configuration.position)
-        tempoLabel.text = String(configuration.tempo)
+        tempoLabel.text = String(Int(configuration.tempo))
     }
     
     func shouldUpdate(kickSequence: [SequenceNode],
