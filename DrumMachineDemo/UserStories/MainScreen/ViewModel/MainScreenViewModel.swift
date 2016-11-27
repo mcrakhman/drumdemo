@@ -73,10 +73,10 @@ class MainScreenViewModel {
     func didTapPlay() {
         if sampler.isPlaying {
             sampler.stop()
-            view.changePlayingState(true)
+            view.changePlayingState(false)
         } else {
             sampler.play()
-            view.changePlayingState(false)
+            view.changePlayingState(true)
         }
     }
     
