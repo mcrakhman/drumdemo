@@ -215,13 +215,13 @@
                                 </variation>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="DbF-TW-YPa">
-                                <rect key="frame" x="88" y="428.5" width="200" height="20"/>
+                                <rect key="frame" x="83.5" y="438.5" width="209" height="22"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OzQ-v0-7mz">
-                                        <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="20" id="szQ-l4-4Iq"/>
-                                            <constraint firstAttribute="height" constant="20" id="tNH-be-jrK"/>
+                                            <constraint firstAttribute="width" constant="22" id="szQ-l4-4Iq"/>
+                                            <constraint firstAttribute="height" constant="22" id="tNH-be-jrK"/>
                                         </constraints>
                                         <state key="normal" image="record"/>
                                         <connections>
@@ -229,10 +229,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dha-Ko-hXn">
-                                        <rect key="frame" x="60" y="0.0" width="20" height="20"/>
+                                        <rect key="frame" x="62" y="0.0" width="22" height="22"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="20" id="Wbm-TC-uMu"/>
-                                            <constraint firstAttribute="height" constant="20" id="ulf-Ht-cAi"/>
+                                            <constraint firstAttribute="width" constant="22" id="Wbm-TC-uMu"/>
+                                            <constraint firstAttribute="height" constant="22" id="ulf-Ht-cAi"/>
                                         </constraints>
                                         <state key="normal" image="pause"/>
                                         <connections>
@@ -240,10 +240,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fqv-tz-cmY">
-                                        <rect key="frame" x="120" y="0.0" width="20" height="20"/>
+                                        <rect key="frame" x="124" y="0.0" width="22" height="22"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="8PY-DR-Det"/>
-                                            <constraint firstAttribute="width" constant="20" id="p24-h8-Rv2"/>
+                                            <constraint firstAttribute="height" constant="22" id="8PY-DR-Det"/>
+                                            <constraint firstAttribute="width" constant="22" id="p24-h8-Rv2"/>
                                         </constraints>
                                         <state key="normal" image="newDownload"/>
                                         <connections>
@@ -251,12 +251,12 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fop-Nh-SUd">
-                                        <rect key="frame" x="180" y="0.0" width="20" height="20"/>
+                                        <rect key="frame" x="186" y="0.0" width="23" height="22"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="Zn9-ec-MyE"/>
-                                            <constraint firstAttribute="width" constant="20" id="l6s-jX-dw1"/>
+                                            <constraint firstAttribute="height" constant="22" id="Zn9-ec-MyE"/>
+                                            <constraint firstAttribute="width" constant="23" id="l6s-jX-dw1"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                         <state key="normal" title="W"/>
                                         <connections>
                                             <action selector="modeButtonTapped:" destination="POW-xQ-Y9y" eventType="touchUpInside" id="mmn-X5-UUY"/>
@@ -298,7 +298,7 @@
                         <constraints>
                             <constraint firstItem="643-AT-jyP" firstAttribute="leading" secondItem="7aV-Ys-ccC" secondAttribute="leading" id="4KX-WJ-CQB"/>
                             <constraint firstItem="643-AT-jyP" firstAttribute="top" secondItem="TzV-1Q-8n1" secondAttribute="bottom" constant="15" id="6hC-b2-MUB"/>
-                            <constraint firstItem="DbF-TW-YPa" firstAttribute="top" secondItem="643-AT-jyP" secondAttribute="bottom" constant="30" id="RmL-IF-xxX"/>
+                            <constraint firstItem="DbF-TW-YPa" firstAttribute="top" secondItem="643-AT-jyP" secondAttribute="bottom" constant="40" id="RmL-IF-xxX"/>
                             <constraint firstItem="Z92-iC-iGY" firstAttribute="top" secondItem="r6B-HD-FSO" secondAttribute="bottom" constant="20" id="Sbg-Nj-aQL"/>
                             <constraint firstItem="fCp-f6-69I" firstAttribute="centerY" secondItem="7aV-Ys-ccC" secondAttribute="centerY" constant="20" id="cUK-TS-2EE"/>
                             <constraint firstItem="DbF-TW-YPa" firstAttribute="centerX" secondItem="OSu-vA-pdS" secondAttribute="centerX" id="eEU-k7-SwO"/>
@@ -336,70 +336,6 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2cg-Ch-Gd6" sceneMemberID="firstResponder"/>
             </objects>
-        </scene>
-        <!--Recordings View Controller-->
-        <scene sceneID="fdH-XE-rnN">
-            <objects>
-                <viewController storyboardIdentifier="RecordingsViewController" id="GuY-sn-NmD" customClass="RecordingsViewController" customModule="DrumMachineDemo" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="wS2-Vt-co8"/>
-                        <viewControllerLayoutGuide type="bottom" id="L9w-HC-4Nw"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="1TD-Qu-Arb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qWI-wG-Flz">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="40V-XG-Zpe">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RecordingsCell" id="XR3-vL-1Bg" customClass="RecordingsCell" customModule="DrumMachineDemo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hf0-nW-hrz">
-                                                    <rect key="frame" x="21.5" y="16" width="7" height="18"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstItem="hf0-nW-hrz" firstAttribute="centerX" secondItem="XR3-vL-1Bg" secondAttribute="centerX" id="GC0-m6-Lbp"/>
-                                            <constraint firstItem="hf0-nW-hrz" firstAttribute="centerY" secondItem="XR3-vL-1Bg" secondAttribute="centerY" id="dMG-EZ-gVj"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="recordingsLabel" destination="hf0-nW-hrz" id="aGD-be-2hb"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="qWI-wG-Flz" firstAttribute="top" secondItem="1TD-Qu-Arb" secondAttribute="top" id="E1P-UO-UDs"/>
-                            <constraint firstAttribute="trailing" secondItem="qWI-wG-Flz" secondAttribute="trailing" id="Jgi-VS-MHj"/>
-                            <constraint firstAttribute="bottom" secondItem="qWI-wG-Flz" secondAttribute="bottom" id="Mk6-op-9Eh"/>
-                            <constraint firstItem="qWI-wG-Flz" firstAttribute="leading" secondItem="1TD-Qu-Arb" secondAttribute="leading" id="R5y-zc-Cle"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="collectionView" destination="qWI-wG-Flz" id="wH9-2a-cNc"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ehf-QN-cJb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1079" y="133"/>
         </scene>
     </scenes>
     <resources>

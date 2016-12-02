@@ -11,7 +11,7 @@ import CoreMotion
 
 enum SamplerConstants {
     static let startingBpm = 60.0
-    static let additionalBpm = 30.0
+    static let additionalBpm = 45.0
     static let referenceAcceleration = 2.5
 }
 

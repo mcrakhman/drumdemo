@@ -54,10 +54,10 @@ class Promise<T> {
     func receivedError(_ error: Error) {
         result = .rejected(error)
         handlers.forEach { $0(result!) }
-        handlers = []
+        handlers = [] 
     }
     
-    func tryHandler(_ handler: @escaping (Result<T>) -> ()) {
+    func addHandler(_ handler: @escaping (Result<T>) -> ()) {
         if let result = result {
             handler(result)
         } else {
@@ -68,7 +68,7 @@ class Promise<T> {
     }
     
     func exit(onQueue q: DispatchQueue = DispatchQueue.main, _ closure: @escaping (T) throws -> ()) {
-        self.tryHandler { result in
+        self.addHandler { result in
             q.async {
                 switch result {
                 case .resolved(let parameter):
@@ -85,7 +85,7 @@ class Promise<T> {
     @discardableResult
     func then(onQueue q: DispatchQueue = DispatchQueue.main, _ closure: @escaping (T) throws -> Void) -> Promise<Void> {
         return Promise<Void> { resolve, reject in
-            self.tryHandler { result in
+            self.addHandler { result in
                 q.async {
                     switch result {
                     case .resolved(let parameter):
@@ -106,10 +106,9 @@ class Promise<T> {
     
     @discardableResult
     func then<U>(onQueue q: DispatchQueue = DispatchQueue.main, _ closure: @escaping (T) throws -> Promise<U>) -> Promise<U> {
-        var result: Promise<U>!
         
-        result = Promise<U> { resolve, reject in
-            self.tryHandler { result in
+        return Promise<U> { resolve, reject in
+            self.addHandler { result in
                 q.async {
                     switch result {
                     case .resolved(let parameter):
@@ -126,13 +125,12 @@ class Promise<T> {
                 }
             }
         }
-        return result
     }
     
     @discardableResult
     func then<U>(onQueue q: DispatchQueue = DispatchQueue.main, _ closure: @escaping (T) throws -> U) -> Promise<U> {
         return Promise<U> { resolve, reject in
-            self.tryHandler { result in
+            self.addHandler { result in
                 q.async {
                     switch result {
                     case .resolved(let parameter):
@@ -154,7 +152,7 @@ class Promise<T> {
     @discardableResult
     func thenDelayed<U>(onQueue q: DispatchQueue = DispatchQueue.main, delay: TimeInterval, _ closure: @escaping (T) throws -> U) -> Promise<U> {
         return Promise<U> { resolve, reject in
-            self.tryHandler { result in
+            self.addHandler { result in
                 q.asyncAfter(deadline: .now() + delay) {
                     switch result {
                     case .resolved(let parameter):
@@ -175,7 +173,7 @@ class Promise<T> {
     
     @discardableResult
     func error(_ closure: @escaping (Error) -> Void) -> Promise<T> {
-        tryHandler { result in
+        addHandler { result in
             switch result {
             case .resolved(_):
                 break
@@ -186,4 +184,40 @@ class Promise<T> {
         }
         return self
     }
+    
+    static func promiseTuple() -> (promise: Promise<T>, resolve: (T) -> (), reject: (Error) -> ()) {
+        var resolve: ((T) -> ())!
+        var reject: ((Error) -> ())!
+        let promise = Promise<T> { res, rej in
+            resolve = res
+            reject = rej
+        }
+        
+        return (promise, resolve, reject)
+    }
+}
+
+func combine<T>(q: DispatchQueue, promises: [Promise<T>]) -> Promise<[T]> {
+    
+    let resultGroup = DispatchGroup()
+    var objects: [T] = []
+    let promiseTuple = Promise<[T]>.promiseTuple()
+    
+    for promise in promises {
+        resultGroup.enter()
+        promise
+            .then { value in
+                resultGroup.leave()
+                objects.append(value) // нужен .barrier
+            }
+            .error { err in
+                promiseTuple.reject(err)
+        }
+    }
+    
+    resultGroup.notify(queue: q) {
+        promiseTuple.resolve(objects)
+    }
+    
+    return promiseTuple.promise
 }

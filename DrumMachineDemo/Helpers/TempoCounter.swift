@@ -37,7 +37,11 @@ class TempoCounter {
     
     init() {
         displayLink = CADisplayLink(target: self, selector: #selector(fire))
-        displayLink.preferredFramesPerSecond = frameRate
+        if #available(iOS 10.0, *) {
+            displayLink.preferredFramesPerSecond = frameRate
+        } else {
+            // Fallback on earlier versions
+        }
         displayLink.add(to: RunLoop.main, forMode: .commonModes)
         displayLink.isPaused = true
     }

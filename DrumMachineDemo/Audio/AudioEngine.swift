@@ -10,9 +10,9 @@ import Foundation
 import AudioKit
 
 enum AudioEngineConstants {
-    static let kickName = "kick-dry"
-    static let snareName = "snare-brute"
-    static let hatName = "hihat-plain"
+    static let kickName = "K - Deep"
+    static let snareName = "S - Clean"
+    static let hatName = "H - Nice"
 }
 
 class AudioEngine: SequencerAudioEngine {

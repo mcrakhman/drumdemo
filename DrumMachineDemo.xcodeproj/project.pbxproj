@@ -12,11 +12,14 @@
 		9E4457BE1DE86E4F005992D0 /* DrumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4457BC1DE86E4F005992D0 /* DrumCell.swift */; };
 		9E4457C11DE86E8B005992D0 /* MainScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4457C01DE86E8B005992D0 /* MainScreenViewModel.swift */; };
 		9E90D3531DE8D014009BB198 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E90D3521DE8D014009BB198 /* Promise.swift */; };
-		9E90D3561DE8D170009BB198 /* RecordingsScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E90D3551DE8D170009BB198 /* RecordingsScreenViewModel.swift */; };
 		9E90D3591DE989BB009BB198 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E90D3571DE989BB009BB198 /* Bolts.framework */; };
 		9E90D35A1DE989BB009BB198 /* Bolts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9E90D3571DE989BB009BB198 /* Bolts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9E90D35B1DE989BB009BB198 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E90D3581DE989BB009BB198 /* Parse.framework */; };
 		9E90D35C1DE989BB009BB198 /* Parse.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9E90D3581DE989BB009BB198 /* Parse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9EA54D751DF1A507008BAC5B /* H - Nice.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9EA54D721DF1A507008BAC5B /* H - Nice.wav */; };
+		9EA54D761DF1A507008BAC5B /* K - Tambo.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9EA54D731DF1A507008BAC5B /* K - Tambo.wav */; };
+		9EA54D771DF1A507008BAC5B /* S - Clean.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9EA54D741DF1A507008BAC5B /* S - Clean.wav */; };
+		9EA54D791DF1A59C008BAC5B /* K - Deep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9EA54D781DF1A59C008BAC5B /* K - Deep.wav */; };
 		9EAEDF041DE8365E00560223 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAEDF031DE8365E00560223 /* AppDelegate.swift */; };
 		9EAEDF091DE8365E00560223 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EAEDF071DE8365E00560223 /* Main.storyboard */; };
 		9EAEDF0B1DE8365E00560223 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EAEDF0A1DE8365E00560223 /* Assets.xcassets */; };
@@ -48,8 +51,6 @@
 		9EC856C81DE87CC9003C5DC9 /* snare-punch.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9EC856C11DE87CC9003C5DC9 /* snare-punch.wav */; };
 		9EC856C91DE87CC9003C5DC9 /* snare-sumo.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9EC856C21DE87CC9003C5DC9 /* snare-sumo.wav */; };
 		9EC856CB1DE8A44B003C5DC9 /* SequenceStepCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC856CA1DE8A44B003C5DC9 /* SequenceStepCounter.swift */; };
-		9EC856D11DE8CB7A003C5DC9 /* RecordingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC856D01DE8CB7A003C5DC9 /* RecordingsViewController.swift */; };
-		9EC856D41DE8CB9E003C5DC9 /* RecordingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC856D31DE8CB9E003C5DC9 /* RecordingsCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -74,9 +75,12 @@
 		9E4457BC1DE86E4F005992D0 /* DrumCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DrumCell.swift; path = UserStories/MainScreen/View/Cells/DrumCell.swift; sourceTree = "<group>"; };
 		9E4457C01DE86E8B005992D0 /* MainScreenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainScreenViewModel.swift; path = UserStories/MainScreen/ViewModel/MainScreenViewModel.swift; sourceTree = "<group>"; };
 		9E90D3521DE8D014009BB198 /* Promise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Promise.swift; path = Helpers/Promise.swift; sourceTree = "<group>"; };
-		9E90D3551DE8D170009BB198 /* RecordingsScreenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecordingsScreenViewModel.swift; path = UserStories/RecordingsScreen/ViewModel/RecordingsScreenViewModel.swift; sourceTree = "<group>"; };
 		9E90D3571DE989BB009BB198 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Carthage/Build/iOS/Bolts.framework; sourceTree = "<group>"; };
 		9E90D3581DE989BB009BB198 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Carthage/Build/iOS/Parse.framework; sourceTree = "<group>"; };
+		9EA54D721DF1A507008BAC5B /* H - Nice.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "H - Nice.wav"; path = "Resources/AudioFiles/H - Nice.wav"; sourceTree = "<group>"; };
+		9EA54D731DF1A507008BAC5B /* K - Tambo.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "K - Tambo.wav"; path = "Resources/AudioFiles/K - Tambo.wav"; sourceTree = "<group>"; };
+		9EA54D741DF1A507008BAC5B /* S - Clean.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "S - Clean.wav"; path = "Resources/AudioFiles/S - Clean.wav"; sourceTree = "<group>"; };
+		9EA54D781DF1A59C008BAC5B /* K - Deep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "K - Deep.wav"; path = "Resources/AudioFiles/K - Deep.wav"; sourceTree = "<group>"; };
 		9EAEDF001DE8365E00560223 /* DrumMachineDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrumMachineDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EAEDF031DE8365E00560223 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9EAEDF081DE8365E00560223 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -110,8 +114,6 @@
 		9EC856C11DE87CC9003C5DC9 /* snare-punch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "snare-punch.wav"; path = "Resources/AudioFiles/snare-punch.wav"; sourceTree = "<group>"; };
 		9EC856C21DE87CC9003C5DC9 /* snare-sumo.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "snare-sumo.wav"; path = "Resources/AudioFiles/snare-sumo.wav"; sourceTree = "<group>"; };
 		9EC856CA1DE8A44B003C5DC9 /* SequenceStepCounter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SequenceStepCounter.swift; path = Helpers/SequenceStepCounter.swift; sourceTree = "<group>"; };
-		9EC856D01DE8CB7A003C5DC9 /* RecordingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecordingsViewController.swift; path = UserStories/RecordingsScreen/View/RecordingsViewController.swift; sourceTree = "<group>"; };
-		9EC856D31DE8CB9E003C5DC9 /* RecordingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecordingsCell.swift; path = UserStories/RecordingsScreen/View/Cells/RecordingsCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,7 +133,6 @@
 		9E4457B51DE86E00005992D0 /* UserStories */ = {
 			isa = PBXGroup;
 			children = (
-				9EC856CC1DE8C787003C5DC9 /* RecordingsScreen */,
 				9E4457B61DE86E23005992D0 /* MainScreen */,
 			);
 			name = UserStories;
@@ -169,14 +170,6 @@
 			isa = PBXGroup;
 			children = (
 				9E4457C01DE86E8B005992D0 /* MainScreenViewModel.swift */,
-			);
-			name = ViewModel;
-			sourceTree = "<group>";
-		};
-		9E90D3541DE8D133009BB198 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				9E90D3551DE8D170009BB198 /* RecordingsScreenViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -292,7 +285,11 @@
 		9EC856BB1DE87C87003C5DC9 /* AudioFiles */ = {
 			isa = PBXGroup;
 			children = (
+				9EA54D721DF1A507008BAC5B /* H - Nice.wav */,
+				9EA54D731DF1A507008BAC5B /* K - Tambo.wav */,
+				9EA54D741DF1A507008BAC5B /* S - Clean.wav */,
 				9EC856BC1DE87CC9003C5DC9 /* hihat-plain.wav */,
+				9EA54D781DF1A59C008BAC5B /* K - Deep.wav */,
 				9EC856BD1DE87CC9003C5DC9 /* kick-classic.wav */,
 				9EC856BE1DE87CC9003C5DC9 /* kick-dry.wav */,
 				9EC856BF1DE87CC9003C5DC9 /* kick-tape.wav */,
@@ -301,32 +298,6 @@
 				9EC856C21DE87CC9003C5DC9 /* snare-sumo.wav */,
 			);
 			name = AudioFiles;
-			sourceTree = "<group>";
-		};
-		9EC856CC1DE8C787003C5DC9 /* RecordingsScreen */ = {
-			isa = PBXGroup;
-			children = (
-				9E90D3541DE8D133009BB198 /* ViewModel */,
-				9EC856CF1DE8CB4B003C5DC9 /* View */,
-			);
-			name = RecordingsScreen;
-			sourceTree = "<group>";
-		};
-		9EC856CF1DE8CB4B003C5DC9 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				9EC856D21DE8CB7F003C5DC9 /* Cells */,
-				9EC856D01DE8CB7A003C5DC9 /* RecordingsViewController.swift */,
-			);
-			name = View;
-			sourceTree = "<group>";
-		};
-		9EC856D21DE8CB7F003C5DC9 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				9EC856D31DE8CB9E003C5DC9 /* RecordingsCell.swift */,
-			);
-			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,10 +364,14 @@
 				9EC856C41DE87CC9003C5DC9 /* kick-classic.wav in Resources */,
 				9EAEDF0E1DE8365E00560223 /* LaunchScreen.storyboard in Resources */,
 				9EC856C61DE87CC9003C5DC9 /* kick-tape.wav in Resources */,
+				9EA54D771DF1A507008BAC5B /* S - Clean.wav in Resources */,
+				9EA54D791DF1A59C008BAC5B /* K - Deep.wav in Resources */,
 				9EC856C81DE87CC9003C5DC9 /* snare-punch.wav in Resources */,
+				9EA54D761DF1A507008BAC5B /* K - Tambo.wav in Resources */,
 				9EC856C91DE87CC9003C5DC9 /* snare-sumo.wav in Resources */,
 				9EC856C71DE87CC9003C5DC9 /* snare-brute.wav in Resources */,
 				9EAEDF0B1DE8365E00560223 /* Assets.xcassets in Resources */,
+				9EA54D751DF1A507008BAC5B /* H - Nice.wav in Resources */,
 				9EC856C31DE87CC9003C5DC9 /* hihat-plain.wav in Resources */,
 				9EC856C51DE87CC9003C5DC9 /* kick-dry.wav in Resources */,
 				9EAEDF091DE8365E00560223 /* Main.storyboard in Resources */,
@@ -413,7 +388,6 @@
 				9E4457BA1DE86E46005992D0 /* MainScreenViewController.swift in Sources */,
 				9EB728671DEA20F90007C9D3 /* UIImage.swift in Sources */,
 				9EAEDF301DE863C100560223 /* AudioEngine.swift in Sources */,
-				9E90D3561DE8D170009BB198 /* RecordingsScreenViewModel.swift in Sources */,
 				9EB728631DE9D9F10007C9D3 /* BeatGenerator.swift in Sources */,
 				9EB728691DEAD7DA0007C9D3 /* CircleButton.swift in Sources */,
 				9EAEDF171DE8370100560223 /* TempoCounter.swift in Sources */,
@@ -434,8 +408,6 @@
 				9EAEDF2C1DE8614100560223 /* Instruments.swift in Sources */,
 				9E4457BD1DE86E4F005992D0 /* ArrowDownCell.swift in Sources */,
 				9EAEDF2A1DE85D4200560223 /* Sequencer.swift in Sources */,
-				9EC856D11DE8CB7A003C5DC9 /* RecordingsViewController.swift in Sources */,
-				9EC856D41DE8CB9E003C5DC9 /* RecordingsCell.swift in Sources */,
 				9E90D3531DE8D014009BB198 /* Promise.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -565,6 +537,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = DrumMachineDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MR.DrumMachineDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -582,6 +555,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = DrumMachineDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MR.DrumMachineDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

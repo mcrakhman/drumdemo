@@ -23,11 +23,11 @@ struct SequencerDisplayConfiguration {
     let tempo: Double
 }
 
-protocol SequencerAudioEngine {
+protocol SequencerAudioEngine: class {
     func play(_ instrument: Instruments, withVelocity velocity: Int)
 }
 
-protocol SequencerDisplay {
+protocol SequencerDisplay: class {
     func show(_ configuration: SequencerDisplayConfiguration)
     func shouldUpdate(kickSequence: [SequenceNode],
                       snareSequence: [SequenceNode],
@@ -41,8 +41,8 @@ class Sequencer {
     
     var counter: SequenceStepCounter
     
-    let display: SequencerDisplay
-    let audioEngine: SequencerAudioEngine
+    weak var display: SequencerDisplay!
+    weak var audioEngine: SequencerAudioEngine!
     let tempoCounter: TempoCounter
     
     let queue: DispatchQueue
