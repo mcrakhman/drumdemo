@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E10B0FC1DFA1D4B00FC06C5 /* RecordingsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E10B0FB1DFA1D4B00FC06C5 /* RecordingsScreenViewController.swift */; };
+		9E10B0FF1DFA1D7600FC06C5 /* RecordingsScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E10B0FE1DFA1D7600FC06C5 /* RecordingsScreenViewModel.swift */; };
+		9E10B1021DFA1DBF00FC06C5 /* RecordingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E10B1011DFA1DBF00FC06C5 /* RecordingsCell.swift */; };
+		9E10B1051DFA1EE900FC06C5 /* MainScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E10B1041DFA1EE900FC06C5 /* MainScreenRouter.swift */; };
 		9E4457BA1DE86E46005992D0 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4457B91DE86E46005992D0 /* MainScreenViewController.swift */; };
 		9E4457BD1DE86E4F005992D0 /* ArrowDownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4457BB1DE86E4F005992D0 /* ArrowDownCell.swift */; };
 		9E4457BE1DE86E4F005992D0 /* DrumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4457BC1DE86E4F005992D0 /* DrumCell.swift */; };
@@ -70,6 +74,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9E10B0FB1DFA1D4B00FC06C5 /* RecordingsScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecordingsScreenViewController.swift; path = UserStories/RecordingsScreen/View/RecordingsScreenViewController.swift; sourceTree = "<group>"; };
+		9E10B0FE1DFA1D7600FC06C5 /* RecordingsScreenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecordingsScreenViewModel.swift; path = UserStories/RecordingsScreen/ViewModel/RecordingsScreenViewModel.swift; sourceTree = "<group>"; };
+		9E10B1011DFA1DBF00FC06C5 /* RecordingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecordingsCell.swift; path = UserStories/RecordingsScreen/View/Cells/RecordingsCell.swift; sourceTree = "<group>"; };
+		9E10B1041DFA1EE900FC06C5 /* MainScreenRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainScreenRouter.swift; path = UserStories/MainScreen/Router/MainScreenRouter.swift; sourceTree = "<group>"; };
 		9E4457B91DE86E46005992D0 /* MainScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainScreenViewController.swift; path = UserStories/MainScreen/View/MainScreenViewController.swift; sourceTree = "<group>"; };
 		9E4457BB1DE86E4F005992D0 /* ArrowDownCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArrowDownCell.swift; path = UserStories/MainScreen/View/Cells/ArrowDownCell.swift; sourceTree = "<group>"; };
 		9E4457BC1DE86E4F005992D0 /* DrumCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DrumCell.swift; path = UserStories/MainScreen/View/Cells/DrumCell.swift; sourceTree = "<group>"; };
@@ -130,9 +138,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9E10B0F91DFA1CC800FC06C5 /* RecordingsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				9E10B0FD1DFA1D6600FC06C5 /* ViewModel */,
+				9E10B0FA1DFA1D3100FC06C5 /* View */,
+			);
+			name = RecordingsScreen;
+			sourceTree = "<group>";
+		};
+		9E10B0FA1DFA1D3100FC06C5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9E10B1001DFA1DB300FC06C5 /* Cells */,
+				9E10B0FB1DFA1D4B00FC06C5 /* RecordingsScreenViewController.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		9E10B0FD1DFA1D6600FC06C5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9E10B0FE1DFA1D7600FC06C5 /* RecordingsScreenViewModel.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		9E10B1001DFA1DB300FC06C5 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9E10B1011DFA1DBF00FC06C5 /* RecordingsCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		9E10B1031DFA1ED100FC06C5 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				9E10B1041DFA1EE900FC06C5 /* MainScreenRouter.swift */,
+			);
+			name = Router;
+			sourceTree = "<group>";
+		};
 		9E4457B51DE86E00005992D0 /* UserStories */ = {
 			isa = PBXGroup;
 			children = (
+				9E10B0F91DFA1CC800FC06C5 /* RecordingsScreen */,
 				9E4457B61DE86E23005992D0 /* MainScreen */,
 			);
 			name = UserStories;
@@ -141,6 +192,7 @@
 		9E4457B61DE86E23005992D0 /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
+				9E10B1031DFA1ED100FC06C5 /* Router */,
 				9E4457BF1DE86E55005992D0 /* ViewModel */,
 				9E4457B71DE86E2A005992D0 /* View */,
 			);
@@ -388,9 +440,12 @@
 				9E4457BA1DE86E46005992D0 /* MainScreenViewController.swift in Sources */,
 				9EB728671DEA20F90007C9D3 /* UIImage.swift in Sources */,
 				9EAEDF301DE863C100560223 /* AudioEngine.swift in Sources */,
+				9E10B1021DFA1DBF00FC06C5 /* RecordingsCell.swift in Sources */,
 				9EB728631DE9D9F10007C9D3 /* BeatGenerator.swift in Sources */,
 				9EB728691DEAD7DA0007C9D3 /* CircleButton.swift in Sources */,
 				9EAEDF171DE8370100560223 /* TempoCounter.swift in Sources */,
+				9E10B1051DFA1EE900FC06C5 /* MainScreenRouter.swift in Sources */,
+				9E10B0FC1DFA1D4B00FC06C5 /* RecordingsScreenViewController.swift in Sources */,
 				9EB7286B1DEAE6910007C9D3 /* UIView.swift in Sources */,
 				9EAEDF271DE85C8D00560223 /* MotionEngine.swift in Sources */,
 				9EAEDF251DE83F4C00560223 /* UICollectionViewCell.swift in Sources */,
@@ -398,6 +453,7 @@
 				9E4457BE1DE86E4F005992D0 /* DrumCell.swift in Sources */,
 				9EB728651DE9E3120007C9D3 /* AccelerationComparator.swift in Sources */,
 				9EAEDF221DE83E6500560223 /* Sequence.swift in Sources */,
+				9E10B0FF1DFA1D7600FC06C5 /* RecordingsScreenViewModel.swift in Sources */,
 				9EB7285F1DE9AF030007C9D3 /* ParseClient.swift in Sources */,
 				9E4457C11DE86E8B005992D0 /* MainScreenViewModel.swift in Sources */,
 				9EAEDF2E1DE8639800560223 /* Sampler.swift in Sources */,

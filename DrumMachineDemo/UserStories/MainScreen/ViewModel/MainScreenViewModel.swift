@@ -18,7 +18,8 @@ enum MainScreenViewModelConstants {
 class MainScreenViewModel {
     
     let sampler: Sampler
-    let view: MainScreenViewController
+    unowned let view: MainScreenViewController
+    let router = MainScreenRouter()
     let parseService = ParseService()
     
     var recordingPromise: Promise<Void>?
@@ -81,6 +82,10 @@ class MainScreenViewModel {
     }
     
     func didTapDownload() {
+        sampler.stop()
+        view.changePlayingState(false)
+        router.openRecordings(from: view)
+        /*
         if let promise = downloadingPromise, promise.result == nil {
             return
         }
@@ -100,6 +105,7 @@ class MainScreenViewModel {
                 self.view.animateDownload(false)
                 self.view.showAlert(message: MainScreenViewModelConstants.downloadFailed)
             }
+        */
     }
     
     func didTapMode() {
