@@ -45,6 +45,12 @@ class ParseService {
             .downloadRandomFile()
             .then(parseData)
     }
+    
+    func loadAllSequences() -> Promise<[[AdvancedBeatSequence]]> {
+        return client
+            .downloadAllFiles()
+            .then { try $0.map(self.parseData) }
+    }
 
     private func parseData(data: Data) throws -> [AdvancedBeatSequence] {
         let deserialized = try serializer.deserialize(data) as? [String: [[[String: Any]]]]

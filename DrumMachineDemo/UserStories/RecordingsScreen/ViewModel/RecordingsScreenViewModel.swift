@@ -10,8 +10,12 @@ import Foundation
 
 class RecordingsScreenViewModel {
     
+    let parseService = ParseService()
+    
     func viewIsReady() {
-        
+        parseService.loadAllSequences().then { sequences in
+            print("Loaded")
+        }
     }
     
     func didTap(recordingAt index: Int) {

@@ -51,6 +51,13 @@ class ParseClient {
         return allPFObjectsFromServer().then(downloadRandomFileFromPFObjects)
     }
     
+    func downloadAllFiles() -> Promise<[Data]> {
+        return allPFObjectsFromServer().then(onQueue: queue) { objects in
+            let promises = objects.map(self.downloadFile)
+            return combine(q: self.queue, promises: promises)
+        }
+    }
+    
     func allPFObjectsFromServer() -> Promise<[PFObject]> {
         return Promise(onQueue: queue) { fulfill, reject in
             let query = PFQuery(className: self.constants.parseClass)
@@ -61,6 +68,23 @@ class ParseClient {
                         return
                 }
                 fulfill(objects)
+            }
+        }
+    }
+    
+    func downloadFile(from object: PFObject) -> Promise<Data> {
+        return Promise(onQueue: queue) { fulfill, reject in
+           if let audio = object[self.constants.parseColumn] as? PFFile {
+                audio.getDataInBackground { data, error in
+                    guard let data = data, error == nil
+                        else {
+                            reject(error!)
+                            return
+                    }
+                    fulfill(data)
+                }
+            } else {
+                reject(ParseError.failedToDownloadFile)
             }
         }
     }
