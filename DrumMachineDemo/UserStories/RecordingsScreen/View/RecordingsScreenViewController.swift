@@ -17,6 +17,7 @@ enum RecordingsViewControllerConstants {
 
 class RecordingsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var collectionView: UICollectionView!
     
     var viewModel: RecordingsScreenViewModel!
@@ -24,12 +25,14 @@ class RecordingsViewController: UIViewController, UICollectionViewDelegate, UICo
     
     override func viewDidLoad() {
         viewModel = RecordingsScreenViewModel(view: self, delegate: delegate)
+        activityIndicator.startAnimating()
         
         configureCollectionView()
         viewModel.viewIsReady()
     }
     
     func didLoadSequences() {
+        activityIndicator.stopAnimating()
         collectionView.reloadData()
     }
     

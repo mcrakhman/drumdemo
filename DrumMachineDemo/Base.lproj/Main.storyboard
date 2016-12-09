@@ -349,6 +349,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="x4M-bV-sln">
+                                <rect key="frame" x="178" y="324" width="20" height="20"/>
+                            </activityIndicatorView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qWI-wG-Flz">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -387,6 +390,8 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="x4M-bV-sln" firstAttribute="centerX" secondItem="1TD-Qu-Arb" secondAttribute="centerX" id="2ke-C5-Sqw"/>
+                            <constraint firstItem="x4M-bV-sln" firstAttribute="centerY" secondItem="1TD-Qu-Arb" secondAttribute="centerY" id="B4o-ov-ZHi"/>
                             <constraint firstItem="qWI-wG-Flz" firstAttribute="top" secondItem="1TD-Qu-Arb" secondAttribute="top" id="E1P-UO-UDs"/>
                             <constraint firstAttribute="trailing" secondItem="qWI-wG-Flz" secondAttribute="trailing" id="Jgi-VS-MHj"/>
                             <constraint firstAttribute="bottom" secondItem="qWI-wG-Flz" secondAttribute="bottom" id="Mk6-op-9Eh"/>
@@ -394,6 +399,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="x4M-bV-sln" id="6yg-wh-z8v"/>
                         <outlet property="collectionView" destination="qWI-wG-Flz" id="wH9-2a-cNc"/>
                     </connections>
                 </viewController>
