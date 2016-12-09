@@ -18,11 +18,19 @@ enum RecordingsViewControllerConstants {
 class RecordingsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    var viewModel = RecordingsScreenViewModel()
+    
+    var viewModel: RecordingsScreenViewModel!
+    weak var delegate: RecordingsScreenViewModelDelegate!
     
     override func viewDidLoad() {
+        viewModel = RecordingsScreenViewModel(view: self, delegate: delegate)
+        
         configureCollectionView()
         viewModel.viewIsReady()
+    }
+    
+    func didLoadSequences() {
+        collectionView.reloadData()
     }
     
     func configureCollectionView() {
@@ -45,7 +53,7 @@ class RecordingsViewController: UIViewController, UICollectionViewDelegate, UICo
     // MARK: UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return RecordingsViewControllerConstants.cellsPerScreen
+        return viewModel.sequences.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

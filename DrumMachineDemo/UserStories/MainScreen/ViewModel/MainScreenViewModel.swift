@@ -15,7 +15,7 @@ enum MainScreenViewModelConstants {
     static let uploadFailed = "Upload failed"
 }
 
-class MainScreenViewModel {
+class MainScreenViewModel: RecordingsScreenViewModelDelegate {
     
     let sampler: Sampler
     unowned let view: MainScreenViewController
@@ -84,28 +84,7 @@ class MainScreenViewModel {
     func didTapDownload() {
         sampler.stop()
         view.changePlayingState(false)
-        router.openRecordings(from: view)
-        /*
-        if let promise = downloadingPromise, promise.result == nil {
-            return
-        }
-        
-        view.animateDownload(true)
-        sampler.changeMode(.playingTempo)
-        view.changeMode(.playingTempo)
-        
-        downloadingPromise =
-            parseService.loadRandomSequences()
-            .then(sampler.load)
-            .then {
-                self.view.animateDownload(false)
-                self.view.showAlert(message: MainScreenViewModelConstants.downloadComplete)
-            }
-            .error { error in
-                self.view.animateDownload(false)
-                self.view.showAlert(message: MainScreenViewModelConstants.downloadFailed)
-            }
-        */
+        router.openRecordings(from: view, delegate: self)
     }
     
     func didTapMode() {
@@ -117,5 +96,13 @@ class MainScreenViewModel {
         }
         sampler.changeMode(newMode)
         view.changeMode(newMode)
+    }
+    
+    func didChooseSequence(sequence: [AdvancedBeatSequence]) {
+        sampler.load(sequence)
+        sampler.changeMode(.playingTempo)
+        view.changeMode(.playingTempo)
+        sampler.play()
+        view.changePlayingState(true)
     }
 }

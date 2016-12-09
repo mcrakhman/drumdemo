@@ -10,8 +10,9 @@ import Foundation
 import UIKit
 
 class MainScreenRouter {
-    func openRecordings(from vc: UIViewController) {
-        let destinationVC = vc.storyboard?.instantiateViewController(withIdentifier: "RecordingsViewController")
-        vc.present(destinationVC!, animated: true, completion: nil)
+    func openRecordings(from vc: UIViewController, delegate: RecordingsScreenViewModelDelegate) {
+        let destinationVC = vc.storyboard?.instantiateViewController(withIdentifier: "RecordingsViewController") as! RecordingsViewController
+        destinationVC.delegate = delegate
+        vc.present(destinationVC, animated: true, completion: nil)
     }
 }
